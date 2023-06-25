@@ -1,0 +1,5 @@
+declare module 'normalize-wheel'
+declare module '@studio-freight/lenis'
+declare module '*.frag'
+declare module '*.vert'
+declare module '*.glsl'

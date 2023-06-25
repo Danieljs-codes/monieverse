@@ -1,0 +1,39 @@
+.image {
+	position: relative;
+	width: 100%;
+	height: auto;
+	@include ratio(var(--width), var(--height));
+
+	&-loading {
+		@extend %cover;
+		@extend %center;
+		width: 100%;
+		background: var(--col-white);
+		z-index: 1;
+		span {
+			@include ratio(1, 1);
+			background: var(--col-primary);
+			color: var(--col-primary);
+			width: max(4rem, 20px);
+			animation: dots 1.2s infinite linear alternate;
+			width: max(1.7rem, 15px);
+			border-radius: 50%;
+
+			@keyframes dots {
+				0% {
+					box-shadow: 28.8px 0, -28.8px 0;
+				}
+
+				33% {
+					box-shadow: 28.8px 0, -28.8px 0 rgba(77, 61, 48, 0.13);
+					background: rgba(77, 61, 48, 0.13);
+				}
+
+				66% {
+					box-shadow: 28.8px 0 rgba(77, 61, 48, 0.13), -28.8px 0;
+					background: rgba(77, 61, 48, 0.13);
+				}
+			}
+		}
+	}
+}

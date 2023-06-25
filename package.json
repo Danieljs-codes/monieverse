@@ -1,0 +1,45 @@
+{
+  "name": "starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/bundle-analyzer": "^13.3.0",
+    "@studio-freight/react-lenis": "^0.0.12",
+    "@studio-freight/tempus": "^0.0.36",
+    "@studio-lumio/hooks": "^0.1.21",
+    "duplicate-package-checker-webpack-plugin": "^3.0.0",
+    "gsap": "^3.11.1",
+    "next": "^13.3.0",
+    "next-pwa": "^5.6.0",
+    "next-sitemap": "^4.0.7",
+    "normalize-wheel": "^1.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.55.0",
+    "zustand": "^4.3.7"
+  },
+  "devDependencies": {
+    "@builder.io/partytown": "^0.7.6",
+    "@types/node": "18.7.22",
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6",
+    "critters": "^0.0.16",
+    "cross-env": "^7.0.3",
+    "eslint": "8.24.0",
+    "eslint-config-next": "^13.3.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.6.2",
+    "typescript": "4.8.3"
+  },
+  "resolutions": {
+    "react-is": "16.13.1",
+    "scheduler": "0.23.0",
+    "zustand": "^4.3.7"
+  }
+}
