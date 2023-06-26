@@ -27,13 +27,17 @@
 	--primary-600: #47389e;
 	--primary-grey-25: rgba(249, 249, 251, 1);
 	--primary-grey-50: #f5f6f8;
+	--primary-grey-100: #eeeef0;
+	--primary-grey-200: #e4e3ec;
 	--primary-grey-400: #8c94a6;
 	--primary-grey-500: #49576d;
 	--primary-grey-600: #1a1a21;
+	--shadow-lg: 0px 2px 12px -6px rgba(16, 24, 40, 0.04),
+		0px 6px 20px -10px rgba(16, 24, 40, 0.06);
 
 	--gutter: max(15px, 10rem);
 	--header: max(56px, 8.8rem);
-	--radius-12: max(10px, 1.2rem);
+	--radius-12: max(8px, 1.2rem);
 	--radius-16: max(12px, 1.6rem);
 	--layout-columns-count: 8;
 	--layout-columns-gap: max(10px, 2rem);

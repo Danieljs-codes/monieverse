@@ -13,7 +13,10 @@
 
 	&-left {
 		@extend %aic;
-		gap: max(50px, 8rem);
+		gap: max(40px, 8rem);
+		img {
+			width: max(18.3rem, 140px);
+		}
 		ul {
 			@extend %aic;
 			gap: max(12px, 1.6rem);
@@ -36,13 +39,14 @@
 	&-right {
 		@extend %aic;
 		gap: max(12px, 1.6rem);
-		button {
+		a {
 			@extend %center;
+			text-align: center;
 			padding: max(8px, 1.2rem) max(16px, 2.4rem);
 			border-radius: var(--radius-12);
 			span {
 				@extend %text-16;
-				width: max(11.2rem, 80px);
+				width: max(11.2rem, 50px);
 				font-weight: 500;
 				letter-spacing: -0.032rem;
 			}
@@ -55,6 +59,85 @@
 			&:nth-of-type(2) {
 				background: var(--primary-400);
 				color: var(--primary-white);
+			}
+		}
+	}
+}
+
+.nav {
+	position: fixed;
+	top: max(15px, 4rem);
+	left: var(--gutter);
+	right: var(--gutter);
+	&-header {
+		@extend %jcsb;
+		z-index: z('navigation');
+		height: var(--header);
+		background: var(--primary-white);
+		border-radius: var(--radius-16);
+		padding: max(10px, 1.8rem) max(10px, 1.8rem);
+		img {
+			width: max(25rem, 100px);
+		}
+
+		div {
+			@extend %aic;
+			gap: max(10px, 2rem);
+
+			a {
+				@extend %center;
+				@include ratio(98, 40);
+				text-align: center;
+				width: max(98px, 20rem);
+				border-radius: var(--radius-12);
+				background: var(--primary-grey-50);
+
+				span {
+					@extend %text-12;
+					font-weight: 500;
+					letter-spacing: -0.12px;
+				}
+			}
+
+			button {
+				@extend %center;
+				@include ratio(40, 40);
+				border-radius: var(--radius-12);
+				border: 1px solid var(--primary-grey-100);
+				width: auto;
+				height: max(40px, 8rem);
+			}
+		}
+	}
+
+	&-main {
+		z-index: z('navigation');
+		margin-top: max(10px, 3rem);
+
+		ul {
+			border-radius: max(16px, 2rem);
+			border-radius: var(--radius-16);
+			border: 1px solid var(--primary-grey-200);
+			background: var(--primary-white);
+			box-shadow: var(--shadow-lg);
+
+			display: inline-flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: max(8px, 2rem);
+			padding: max(3rem, 12px);
+			width: 100%;
+
+			li {
+				@extend %text-16;
+				padding: max(3rem, 12px);
+				color: var(--primary-grey-600);
+				font-weight: 500;
+				line-height: 1.5;
+				letter-spacing: -0.32px;
+				&:last-of-type {
+					color: var(--primary-400);
+				}
 			}
 		}
 	}
