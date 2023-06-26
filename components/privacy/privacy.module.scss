@@ -51,7 +51,7 @@
 	&-main {
 		@extend %container;
 		background: var(--primary-white);
-		padding-top: max(6rem, 40px);
+		padding-top: max(6rem, 30px);
 		padding-bottom: max(10rem, 50px);
 		p {
 			color: var(--primary-grey-500);

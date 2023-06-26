@@ -8,6 +8,7 @@ import Paragraphs from './elements/Paragraphs'
 
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import { Nav } from './components/nav'
 gsap.registerPlugin(ScrollTrigger)
 
 export class App {
@@ -20,6 +21,7 @@ export class App {
 	animations: any[]
 	animationsSpeed: any
 	animationsParagraphs: any
+	nav: Nav
 
 	constructor({ page }: { page: string }) {
 		AutoBind(this)
@@ -39,6 +41,7 @@ export class App {
 
 	createComponents(): void {
 		this.createAnimations()
+		this.nav = new Nav()
 	}
 
 	createAnimations(): void {
