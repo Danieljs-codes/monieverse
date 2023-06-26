@@ -2,14 +2,12 @@ import NextImage from 'next/image'
 import s from './Image.module.scss'
 import { useState } from 'react'
 import cn from '~/utils/cn'
-import { CD_IMAGE } from '~/utils/env'
 
 type imageType = {
 	[x: string]: any
 	className?: any
 	style?: any
 	priority?: boolean
-	sizes?: string
 	quality?: number
 	loading?: 'eager' | 'lazy'
 	width: number | string | any
@@ -26,7 +24,6 @@ export function Image({
 	priority = false,
 	preload = false,
 	style = {},
-	sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
 	loading = 'lazy',
 	quality = 100,
 	alt = '',
@@ -34,7 +31,6 @@ export function Image({
 	...props
 }: imageType) {
 	const [loadingComplete, setLoadingComplete] = useState(false)
-	const params = ['f_auto', 'c_limit', `w_${width}`, 'q_auto']
 
 	return preload ? (
 		<div
@@ -57,8 +53,7 @@ export function Image({
 				draggable='false'
 				quality={quality}
 				alt={alt}
-				src={`${CD_IMAGE}/${params.join(',')}/${src}`}
-				sizes={sizes}
+				src={src}
 			/>
 		</div>
 	) : (
@@ -73,13 +68,7 @@ export function Image({
 			style={{ ...style, '--width': width, '--height': height }}
 			quality={quality}
 			alt={alt}
-			src={`${CD_IMAGE}/${params.join(',')}/${src}`}
-			sizes={sizes}
+			src={src}
 		/>
 	)
 }
-
-// function cloudinaryLoader({ src, width, quality }) {
-//   const params = ['f_auto', 'c_limit', `w_${width}`, `q_auto`]
-//   return `${CD_IMAGE}/${params.join(',')}/${src}`
-// }

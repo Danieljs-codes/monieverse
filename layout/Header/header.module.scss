@@ -1,0 +1,58 @@
+.header {
+	@extend %jcsb;
+	position: sticky;
+	top: max(3rem, 20px);
+	padding: max(12px, 1.8rem) max(16px, 2.4rem);
+	margin-inline: var(--gutter);
+	background: var(--primary-white);
+	border-radius: var(--radius-16);
+	margin-top: max(20px, 4rem);
+
+	&-left {
+		@extend %aic;
+		gap: max(50px, 8rem);
+		ul {
+			@extend %aic;
+			gap: max(12px, 1.6rem);
+			li {
+				padding: max(4px, 0.4rem) max(12px, 1.6rem);
+				a {
+					@extend %text-16;
+					color: var(--primary-grey-400);
+					font-weight: 500;
+					letter-spacing: -0.032rem;
+					transition: color 0.35s var(--ease-out-cubic);
+					&:hover {
+						color: var(--black);
+					}
+				}
+			}
+		}
+	}
+
+	&-right {
+		@extend %aic;
+		gap: max(12px, 1.6rem);
+		button {
+			@extend %center;
+			@extend %text-16;
+			padding: max(8px, 1.2rem) max(16px, 2.4rem);
+			border-radius: var(--radius-12);
+			font-weight: 500;
+			letter-spacing: -0.032rem;
+			span {
+				width: max(11.2rem, 80px);
+			}
+
+			&:nth-of-type(1) {
+				background: var(--primary-grey-50);
+				color: var(--primary-grey-600);
+			}
+
+			&:nth-of-type(2) {
+				background: var(--primary-400);
+				color: var(--primary-white);
+			}
+		}
+	}
+}

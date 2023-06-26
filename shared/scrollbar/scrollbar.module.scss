@@ -17,11 +17,11 @@
 	.thumb {
 		min-height: max(4.8rem, 24px);
 		width: max(0.5rem, 5px);
-		background-color: var(--col-primary);
+		background-color: var(--primary-400);
 		position: absolute;
 		right: max(0.2rem, 2px);
 		border-radius: max(0.4rem, 4px);
-		border: max(0.5px, 0.1rem) solid var(--col-primary);
+		border: max(0.5px, 0.1rem) solid var(--primary-400);
 		cursor: grab;
 	}
 

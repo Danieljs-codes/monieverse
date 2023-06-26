@@ -2,7 +2,7 @@
 	@extend %cover;
 	@extend %center;
 	position: fixed;
-	background: var(--col-black);
+	background: var(--black);
 	z-index: z('preloader');
 	transform: translateY(100%);
 }

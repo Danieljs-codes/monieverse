@@ -21,10 +21,20 @@
 	--ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
 	// colors
-	--col-white: #ffffff;
-	--col-black: #000000;
-	--col-primary: #8872fd;
+	--primary-white: #ffffff;
+	--black: #000000;
+	--primary-400: #8872fd;
+	--primary-grey-25: rgba(249, 249, 251, 1);
+	--primary-grey-50: #f5f6f8;
+	--primary-grey-400: #8c94a6;
+	--primary-grey-600: #1a1a21;
 
-	--gutter: max(10px, 1.6rem);
+	--gutter: max(15px, 10rem);
+	--radius-12: max(10px, 1.2rem);
+	--radius-16: max(12px, 1.6rem);
+	--layout-columns-count: 8;
+	--layout-columns-gap: max(10px, 2rem);
+
 	--clash: 'Clash Display', sans-serif;
+	--inter: 'Inter', 'Helvetica';
 }

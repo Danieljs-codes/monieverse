@@ -79,6 +79,13 @@ export default function Document() {
 					href='/fonts/clash-variable.woff2'
 					crossOrigin='anonymous'
 				/>
+				<link
+					as='font'
+					rel='preload prefetch'
+					type='font/woff2'
+					href='/fonts/Inter.woff2'
+					crossOrigin='anonymous'
+				/>
 				{/* END FONTS */}
 			</Head>
 			<body>

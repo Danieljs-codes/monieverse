@@ -28,7 +28,7 @@ html {
 }
 
 * {
-	font-family: var(--clash);
+	font-family: var(--inter);
 }
 
 .lenis {
@@ -46,8 +46,8 @@ html {
 }
 
 body {
-	background-color: var(--col-white);
-	color: var(--col-black);
+	background: var(--primary-grey-25);
+	color: var(--black);
 }
 
 [data-animation='paragraphs'] {

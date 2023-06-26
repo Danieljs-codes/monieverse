@@ -6,17 +6,21 @@ import { useEffectOnce } from '@studio-lumio/hooks'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import CustomEase from 'gsap/dist/CustomEase'
-import S from './Layout.module.scss'
+
 import { useLenis, Lenis } from '@studio-freight/react-lenis'
 import { capitalize, scrollOptions } from '~/utils'
-import { Link } from '~/shared'
+
 import Head from 'next/head'
+import Header from '../Header'
 
 const Scrollbar = dynamic(() => import('~/shared').then(({ Scrollbar }) => Scrollbar), {
 	ssr: false,
 })
-const RealViewport = dynamic(() =>
-	import('~/shared').then(({ RealViewport }) => RealViewport)
+const RealViewport = dynamic(
+	() => import('~/shared').then(({ RealViewport }) => RealViewport),
+	{
+		ssr: false,
+	}
 )
 
 if (typeof window !== 'undefined') {
@@ -47,22 +51,6 @@ const FrontLayout = ({
 	page: string
 	desc?: string
 }) => {
-	type ILinks = { href: string; name: string }
-	const links: ILinks[] = [
-		{
-			href: '/',
-			name: 'Home',
-		},
-		{
-			href: '/about',
-			name: 'About',
-		},
-		{
-			href: '/contact',
-			name: 'Contact',
-		},
-	]
-
 	const lenis = useLenis(() => ScrollTrigger.update())
 	useEffect(() => ScrollTrigger.refresh(), [lenis])
 
@@ -75,6 +63,7 @@ const FrontLayout = ({
 	})
 	const pageDesc =
 		'Receive and make payments to vendors from across the globe. With multi-currency accounts, you can send and receive from China, UK, Nigeria and more at low-fees.'
+
 	return (
 		<Lenis root options={{ ...scrollOptions }}>
 			<Head>
@@ -83,25 +72,12 @@ const FrontLayout = ({
 				<meta property='og:description' content={desc || pageDesc} />
 				<meta name='twitter:description' content={desc || pageDesc} />
 			</Head>
-			<main className={S.layout} data-main>
+			<main>
 				<RealViewport />
 				<Scrollbar />
+				<Header />
 
-				<header className={S.header}>
-					<div className={S['header-left']}>
-						<ul>
-							{links.map((link) => (
-								<li key={link.href}>
-									<Link href={link.href}>{link.name}</Link>
-								</li>
-							))}
-						</ul>
-					</div>
-				</header>
-
-				<div className={S.child} data-page={page}>
-					{children}
-				</div>
+				<div data-page={page}>{children}</div>
 			</main>
 		</Lenis>
 	)
