@@ -3,8 +3,6 @@ import { mapEach } from './utils/dom'
 
 import { Home } from './pages/home'
 
-import { Preloader } from './components/preloader'
-
 import Paragraphs from './elements/Paragraphs'
 
 import gsap from 'gsap'
@@ -18,7 +16,6 @@ export class App {
 	frame: any
 	lenis: any
 
-	preloader: Preloader
 	animations: any[]
 	animationsSpeed: any
 	animationsParagraphs: any
@@ -34,20 +31,9 @@ export class App {
 		this.onResize()
 	}
 
-	createPreloader() {
-		if (!sessionStorage.getItem('preloader')) {
-			this.preloader = new Preloader()
-			this.preloader.once('completed', this.onPreloaded.bind(this))
-		}
-	}
-
 	async reset() {
-		if (sessionStorage.getItem('preloader')) {
-			await this.currentpage.reset()
-			this.currentpage.show()
-		} else {
-			this.createPreloader()
-		}
+		await this.currentpage.reset()
+		this.currentpage.show()
 	}
 
 	createComponents(): void {
@@ -92,11 +78,6 @@ export class App {
 		this.currentpage.reset()
 		this.addEventListeners()
 		this.createComponents()
-	}
-
-	onPreloaded() {
-		this.currentpage.show()
-		this.preloader.destroy()
 	}
 
 	/**

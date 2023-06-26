@@ -27,6 +27,10 @@ html {
 	}
 }
 
+* {
+	font-family: var(--clash);
+}
+
 .lenis {
 	height: auto;
 	&.lenis-smooth {

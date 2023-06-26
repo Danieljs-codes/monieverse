@@ -73,14 +73,15 @@ const FrontLayout = ({
 		}
 		init()
 	})
-	const pageDesc = 'starter file for studio lumio'
+	const pageDesc =
+		'Receive and make payments to vendors from across the globe. With multi-currency accounts, you can send and receive from China, UK, Nigeria and more at low-fees.'
 	return (
 		<Lenis root options={{ ...scrollOptions }}>
 			<Head>
-				<title>{`${capitalize(page)} -  - Diana Benjamin Etuk`}</title>
-				<meta name='description' content={desc ? desc : pageDesc} />
-				<meta property='og:description' content={desc ? desc : pageDesc} />
-				<meta name='twitter:description' content={desc ? desc : pageDesc} />
+				<title>{`${capitalize(page)} - Monie Verse`}</title>
+				<meta name='description' content={desc || pageDesc} />
+				<meta property='og:description' content={desc || pageDesc} />
+				<meta name='twitter:description' content={desc || pageDesc} />
 			</Head>
 			<main className={S.layout} data-main>
 				<RealViewport />

@@ -1,7 +1,7 @@
 {
-    "name": "Next Lenis Starter",
-    "short_name": "Next Lenis",
-    "description": "Boilerplate for next js using lenis scroll",
+    "name": "Monie Verse",
+    "short_name": "Monie Verse",
+    "description": "Receive and make payments to vendors from across the globe. With multi-currency accounts, you can send and receive from China, UK, Nigeria and more at low-fees.",
     "icons": [
         {
             "src": "/icon.png",
@@ -16,8 +16,8 @@
             "purpose": "maskable"
         }
     ],
-    "theme_color": "#3fc380",
-    "background_color": "#333333",
+    "theme_color": "#ffffff",
+    "background_color": "#8872FD",
     "start_url": "/",
     "scope": ".",
     "display": "standalone",

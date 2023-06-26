@@ -2,11 +2,8 @@ import '../scss/index.scss'
 
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { Manrope } from 'next/font/google'
-const manrope = Manrope({ subsets: ['latin'] })
-
-import Preloader from '~/layout/preloader'
 import { PageTransition } from '~/layout/Transition'
+
 // import Script from 'next/script'
 // import { NODE_ENV, HOTJAR_ID } from '~/utils/env'
 
@@ -20,8 +17,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 					name='viewport'
 					content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=6,user-scalable=yes'
 				/>
-				<meta name='description' content='starter' />
-				<title>Starter</title>
+				<meta
+					name='description'
+					content='Receive and make payments to vendors from across the globe. With multi-currency accounts, you can send and receive from China, UK, Nigeria and more at low-fees.'
+				/>
+				<title>Monie Verse</title>
 			</Head>
 
 			{/* Hotjar Tracking Code 
@@ -45,8 +45,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				</>
 			)} */}
 
-			<main className={manrope.className}>
-				<Preloader />
+			<main>
 				<PageTransition />
 				<Component {...pageProps} />
 			</main>
