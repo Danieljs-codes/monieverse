@@ -1,11 +1,10 @@
 import FrontLayout from '@/layout/frontLayout'
+import Privacy from '~/components/privacy'
 
 const ContactPage = () => {
 	return (
-		<FrontLayout page='home'>
-			<section>
-				<h1>Contact</h1>
-			</section>
+		<FrontLayout page='terms'>
+			<Privacy />
 		</FrontLayout>
 	)
 }

@@ -2,6 +2,7 @@ import { AutoBind } from './utils/bind'
 import { mapEach } from './utils/dom'
 
 import { Home } from './pages/home'
+import { Terms } from './pages/terms'
 
 import Paragraphs from './elements/Paragraphs'
 
@@ -72,6 +73,7 @@ export class App {
 	createPages() {
 		this.pages = {
 			home: new Home(),
+			terms: new Terms(),
 		}
 		this.currentpage = this.pages[this.pagetitle]
 		this.currentpage.create()

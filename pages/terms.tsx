@@ -1,11 +1,10 @@
 import FrontLayout from '@/layout/frontLayout'
+import Terms from '~/components/privacy/terms'
 
 const AboutPage = () => {
 	return (
-		<FrontLayout page='home'>
-			<section>
-				<h1>About</h1>
-			</section>
+		<FrontLayout page='terms'>
+			<Terms />
 		</FrontLayout>
 	)
 }

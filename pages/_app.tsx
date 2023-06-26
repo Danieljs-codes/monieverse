@@ -3,6 +3,8 @@ import '../scss/index.scss'
 import dynamic from 'next/dynamic'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { Inter } from 'next/font/google'
+const inter = Inter({ subsets: ['latin'] })
 
 import { PageTransition } from '~/layout/Transition'
 import { isLocal } from '~/utils'
@@ -29,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<title>Monie Verse</title>
 			</Head>
 
-			<main>
+			<main className={inter.className}>
 				{isLocal && <GridDebugger />}
 				<PageTransition />
 				<Component {...pageProps} />
