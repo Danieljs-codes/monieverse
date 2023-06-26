@@ -1,0 +1,55 @@
+.faq {
+	margin-inline: var(--gutter);
+	padding-block: max(12rem, 50px);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: max(2rem, 20px);
+	border-top: 2px solid var(--primary-grey-100);
+
+	@include respondMax('tablet') {
+		grid-template-columns: 1fr;
+	}
+	h1 {
+		@extend %text-48;
+		color: var(--primary-grey-600);
+		font-family: var(--clash);
+		font-weight: 500;
+		line-height: 1.25;
+		letter-spacing: 0.48px;
+		em {
+			color: var(--primary-400);
+		}
+	}
+
+	&-right {
+		&-btn {
+			@extend %aic;
+			gap: max(3.2rem, 16px);
+			padding-block: max(3.2rem, 28px);
+			white-space: nowrap;
+			flex-wrap: wrap;
+			a {
+				@extend %center;
+				gap: max(5px, 0.8rem);
+
+				padding: max(10px, 1.4rem) max(16px, 2.4rem);
+				border-radius: var(--radius-12);
+				background: var(--primary-400);
+				width: fit-content;
+
+				@extend %text-16;
+				font-weight: 500;
+				color: var(--primary-white);
+				text-align: center;
+				letter-spacing: -0.032rem;
+			}
+
+			p {
+				@extend %text-16;
+				color: var(--primary-grey-500);
+				line-height: 1.5;
+				letter-spacing: -0.32px;
+			}
+		}
+	}
+}
