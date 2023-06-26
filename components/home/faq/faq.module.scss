@@ -9,7 +9,7 @@
 	@include respondMax('tablet') {
 		grid-template-columns: 1fr;
 	}
-	h1 {
+	& > h1 {
 		@extend %text-48;
 		color: var(--primary-grey-600);
 		font-family: var(--clash);
