@@ -47,10 +47,12 @@ const FrontLayout = ({
 	children,
 	page,
 	desc,
+	title,
 }: {
 	children: any
 	page: string
 	desc?: string
+	title?: string
 }) => {
 	const lenis = useLenis(() => ScrollTrigger.update())
 	useEffect(() => ScrollTrigger.refresh(), [lenis])
@@ -68,7 +70,7 @@ const FrontLayout = ({
 	return (
 		<Lenis root options={{ ...scrollOptions }}>
 			<Head>
-				<title>{`${capitalize(page)} - Monie Verse`}</title>
+				<title>{`${capitalize(title || page)} - Monie Verse`}</title>
 				<meta name='description' content={desc || pageDesc} />
 				<meta property='og:description' content={desc || pageDesc} />
 				<meta name='twitter:description' content={desc || pageDesc} />

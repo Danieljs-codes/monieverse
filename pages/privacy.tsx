@@ -3,7 +3,7 @@ import Privacy from '~/components/privacy'
 
 const ContactPage = () => {
 	return (
-		<FrontLayout page='terms'>
+		<FrontLayout title='Privacy Policy' page='terms'>
 			<Privacy />
 		</FrontLayout>
 	)

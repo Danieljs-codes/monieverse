@@ -1,13 +1,15 @@
 .header {
 	@extend %jcsb;
-	position: sticky;
-	top: max(2rem, 20px);
+	position: fixed;
 	z-index: z('navigation');
-	padding: max(12px, 1.8rem) max(16px, 2.4rem);
-	margin-inline: var(--gutter);
+	top: max(20px, 4rem);
+	left: var(--gutter);
+	right: var(--gutter);
+
+	height: var(--header);
 	background: var(--primary-white);
 	border-radius: var(--radius-16);
-	margin-top: max(20px, 4rem);
+	padding: max(12px, 1.8rem) max(16px, 2.4rem);
 
 	&-left {
 		@extend %aic;
