@@ -1,2 +1,63 @@
 .hero {
+	@extend %container;
+
+	&-top {
+		@extend %center;
+		flex-direction: column;
+		padding-top: max(20rem, 130px);
+		padding-bottom: max(15rem, 100px);
+
+		h1 {
+			@extend %text-88;
+			color: var(--primary-grey-600);
+			font-family: var(--clash);
+			font-weight: 500;
+			line-height: 1.1;
+			letter-spacing: -0.88px;
+			margin-bottom: max(1.6rem, 12px);
+		}
+		p {
+			@extend %text-18;
+			width: max(71.8rem, 550px);
+			color: var(--primary-grey-400);
+			text-align: center;
+			margin-bottom: max(4rem, 24px);
+			@include respondMax('mobile3x') {
+				width: 100%;
+			}
+		}
+		&-btn {
+			@extend %center;
+			gap: max(1.6rem, 10px);
+			@include respondMax('mobile') {
+				flex-direction: column;
+			}
+			a {
+				@extend %center;
+				@extend %text-16;
+				padding: max(10px, 1.6rem) max(14px, 2.4rem);
+				border-radius: var(--radius-12);
+				font-weight: 500;
+				line-height: 1.5;
+				letter-spacing: -0.32px;
+
+				@include respondMax('mobile') {
+					width: 167px;
+					height: 45px;
+				}
+
+				&:nth-of-type(1) {
+					background: var(--primary-400);
+					color: var(--primary-white);
+				}
+				&:nth-of-type(2) {
+					background: var(--primary-400);
+					color: var(--primary-grey-600);
+					border-radius: 12px;
+					border: 1px solid var(--primary-grey-100);
+					background: var(--primary-white);
+				}
+			}
+		}
+	}
 }

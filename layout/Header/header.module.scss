@@ -73,13 +73,16 @@
 	top: max(15px, 4rem);
 	left: var(--gutter);
 	right: var(--gutter);
+	pointer-events: none;
+	display: none;
 
-	@include respondMin('tablet') {
-		display: none;
+	@include respondMax('tablet') {
+		display: block;
 	}
 
 	&-header {
 		@extend %jcsb;
+		pointer-events: all;
 		z-index: z('navigation');
 		height: var(--header);
 		background: var(--primary-white);

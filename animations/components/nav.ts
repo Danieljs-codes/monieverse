@@ -70,6 +70,7 @@ export class Nav extends Component {
 			.set(navMain, {
 				opacity: 0,
 				scale: 0.95,
+				pointerEvents: 'none',
 			})
 			.set(navItem, {
 				opacity: 0,
@@ -99,6 +100,7 @@ export class Nav extends Component {
 			.to(navMain, {
 				opacity: 1,
 				scale: 1,
+				pointerEvents: 'all',
 			})
 			.to(
 				navItem,
@@ -156,6 +158,7 @@ export class Nav extends Component {
 				{
 					opacity: 0,
 					scale: 0.95,
+					pointerEvents: 'none',
 				},
 				0.5
 			)
