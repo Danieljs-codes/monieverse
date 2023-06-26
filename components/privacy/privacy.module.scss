@@ -13,12 +13,24 @@
 			left: 0;
 			top: 0;
 			z-index: -1;
+			@include respondMax('mobile3x') {
+				display: none;
+			}
+			img {
+				width: max(43.5rem, 240px);
+			}
 		}
 		&-right {
 			position: absolute;
 			right: 0;
 			top: 0;
 			z-index: -1;
+			@include respondMax('mobile3x') {
+				display: none;
+			}
+			img {
+				width: max(34.6rem, 200px);
+			}
 		}
 		h1 {
 			@extend %text-64;

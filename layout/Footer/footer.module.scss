@@ -107,7 +107,7 @@
 
 	&-mb {
 		padding-inline: var(--gutter);
-		padding-block: max(5rem, 30px);
+		padding-block: max(5rem, 20px);
 		h1 {
 			@extend %text-18;
 			color: var(--primary-grey-500);
@@ -124,8 +124,7 @@
 		ul {
 			@extend %aic;
 			gap: max(8rem, 60px);
-			margin-top: max(10rem, 40px);
-			margin-bottom: max(10rem, 50px);
+			margin-block: max(10rem, 35px);
 
 			a {
 				@extend %text-16;
