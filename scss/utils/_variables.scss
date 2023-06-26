@@ -40,4 +40,8 @@
 
 	--clash: 'Clash Grotesk', sans-serif;
 	--inter: 'Inter', 'Helvetica';
+
+	@include respondMax('mobile3x') {
+		--gutter: max(10px, 6rem);
+	}
 }
