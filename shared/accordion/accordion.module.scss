@@ -2,6 +2,7 @@
 	&-item {
 		padding-block: max(3.2rem, 20px);
 		border-bottom: 2px solid var(--primary-grey-100);
+		width: 100%;
 		&:nth-of-type(1) {
 			padding-top: 0;
 		}
@@ -9,12 +10,15 @@
 
 	button {
 		padding: 0;
+		width: 100%;
 	}
 
 	&-trigger {
-		@extend %aic;
-		gap: max(2.4rem, 16px);
 		transition: margin-bottom 500ms var(--ease-out-quart);
+		& > div {
+			@extend %aic;
+			gap: max(2.4rem, 16px);
+		}
 		h1 {
 			@extend %text-20;
 			color: var(--primary-grey-600);
