@@ -70,6 +70,7 @@ export function chunkify(a: string | any[], n: number, balanced: any) {
 }
 
 export function replaceText(inputText) {
+	// eslint-disable-next-line no-useless-escape
 	const pattern = /\hello@monieverse.com\b/g
 	const replacedText = inputText.replace(
 		pattern,

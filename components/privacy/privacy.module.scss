@@ -4,8 +4,21 @@
 		@extend %center;
 		flex-direction: column;
 		gap: max(1.6rem, 14px);
-		height: max(42rem, 250px);
+		height: max(41rem, 250px);
 		text-align: center;
+
+		&-left {
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: -1;
+		}
+		&-right {
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: -1;
+		}
 		h1 {
 			@extend %text-64;
 			color: var(--primary-grey-600);

@@ -2,6 +2,7 @@
 	@extend %jcsb;
 	position: sticky;
 	top: max(2rem, 20px);
+	z-index: z('navigation');
 	padding: max(12px, 1.8rem) max(16px, 2.4rem);
 	margin-inline: var(--gutter);
 	background: var(--primary-white);
@@ -35,13 +36,13 @@
 		gap: max(12px, 1.6rem);
 		button {
 			@extend %center;
-			@extend %text-16;
 			padding: max(8px, 1.2rem) max(16px, 2.4rem);
 			border-radius: var(--radius-12);
-			font-weight: 500;
-			letter-spacing: -0.032rem;
 			span {
+				@extend %text-16;
 				width: max(11.2rem, 80px);
+				font-weight: 500;
+				letter-spacing: -0.032rem;
 			}
 
 			&:nth-of-type(1) {

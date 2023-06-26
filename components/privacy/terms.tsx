@@ -1,5 +1,6 @@
 import { chunkify, generateKey, replaceText } from '~/utils'
 import s from './privacy.module.scss'
+import { Image, Parallax } from '~/shared'
 
 const Terms = () => {
 	const list = [
@@ -41,6 +42,26 @@ const Terms = () => {
 	return (
 		<div className={s.privacy}>
 			<div className={s['privacy-top']}>
+				<Parallax position='top' scale={1} className={s['privacy-top-left']}>
+					<Image
+						loading='eager'
+						priority
+						width={435}
+						height={536}
+						src='/terms-left.svg'
+						alt=''
+					/>
+				</Parallax>
+				<Parallax position='top' scale={1} className={s['privacy-top-right']}>
+					<Image
+						loading='eager'
+						priority
+						width={346}
+						height={525}
+						src='/terms-right.svg'
+						alt=''
+					/>
+				</Parallax>
 				<h1>Terms of Use</h1>
 				<h2>Policy last updated on June 21st, 2023</h2>
 			</div>

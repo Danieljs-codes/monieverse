@@ -61,7 +61,7 @@ export function Image({
 			{...props}
 			priority={priority}
 			loading={loading}
-			className={className}
+			className={cn(s.img, className)}
 			draggable='false'
 			width={width}
 			height={height}

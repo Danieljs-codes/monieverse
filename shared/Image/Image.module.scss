@@ -8,12 +8,12 @@
 		@extend %cover;
 		@extend %center;
 		width: 100%;
-		background: var(--primary-white);
+		background: var(--col-white);
 		z-index: 1;
 		span {
 			@include ratio(1, 1);
-			background: var(--primary-400);
-			color: var(--primary-400);
+			background: var(--col-purple);
+			color: var(--col-purple);
 			width: max(4rem, 20px);
 			animation: dots 1.2s infinite linear alternate;
 			width: max(1.7rem, 15px);
@@ -36,4 +36,9 @@
 			}
 		}
 	}
+}
+
+.img {
+	@include ratio(var(--width), var(--height));
+	height: auto;
 }

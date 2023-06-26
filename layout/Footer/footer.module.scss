@@ -25,14 +25,14 @@
 
 		button {
 			@extend %center;
-			@extend %text-16;
 
 			padding: max(12px, 1.6rem) max(16px, 2.4rem);
 			background: var(--primary-400);
-			color: var(--primary-white);
 
 			border-radius: var(--radius-12);
 			span {
+				@extend %text-16;
+				color: var(--primary-white);
 				font-weight: 500;
 				letter-spacing: -0.032rem;
 				line-height: 1.5;
