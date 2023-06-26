@@ -11,6 +11,10 @@
 	border-radius: var(--radius-16);
 	padding: max(12px, 1.8rem) max(16px, 2.4rem);
 
+	@include respondMax('tablet') {
+		display: none;
+	}
+
 	&-left {
 		@extend %aic;
 		gap: max(40px, 8rem);
@@ -69,6 +73,11 @@
 	top: max(15px, 4rem);
 	left: var(--gutter);
 	right: var(--gutter);
+
+	@include respondMin('tablet') {
+		display: none;
+	}
+
 	&-header {
 		@extend %jcsb;
 		z-index: z('navigation');
@@ -113,6 +122,7 @@
 	&-main {
 		z-index: z('navigation');
 		margin-top: max(10px, 3rem);
+		opacity: 0;
 
 		ul {
 			border-radius: max(16px, 2rem);

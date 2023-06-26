@@ -1,11 +1,8 @@
 import { Image, Link } from '~/shared'
 import s from './header.module.scss'
 import { Fragment } from 'react'
-import { useMediaQuery } from '@studio-lumio/hooks'
-import cn from '~/utils/cn'
 
 const Header = () => {
-	const isMobile = useMediaQuery('(max-width: 768px)')
 	type ILinks = { href: string; name: string }
 	const links: ILinks[] = [
 		{
@@ -24,7 +21,7 @@ const Header = () => {
 
 	return (
 		<Fragment>
-			<header data-animation='header' className={cn(isMobile && 'dnone', s.header)}>
+			<header data-animation='header' className={s.header}>
 				<div className={s['header-left']}>
 					<Link href='/'>
 						<Image alt='monie verse' width={183.37} height={32} src='/logo-text.svg' />
@@ -47,7 +44,7 @@ const Header = () => {
 				</div>
 			</header>
 
-			<div data-animation='nav' className={cn(!isMobile && 'dnone', s.nav)}>
+			<div data-animation='nav' className={s.nav}>
 				<header className={s['nav-header']}>
 					<Link href='/'>
 						<Image alt='monie verse' width={183.37} height={32} src='/logo-text.svg' />

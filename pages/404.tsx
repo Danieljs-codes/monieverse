@@ -1,4 +1,4 @@
-import FrontLayout from '@/layout/frontLayout'
+import FrontLayout from '~/layout'
 
 const ErrorPage = () => {
 	return (

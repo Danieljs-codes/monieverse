@@ -1,4 +1,4 @@
-import FrontLayout from '@/layout/frontLayout'
+import FrontLayout from '~/layout'
 import Hero from '~/components/home/hero'
 
 const HomePage = () => {

@@ -11,8 +11,8 @@ import { useLenis, Lenis } from '@studio-freight/react-lenis'
 import { capitalize, scrollOptions } from '~/utils'
 
 import Head from 'next/head'
-import Header from '../Header'
-import Footer from '../Footer'
+import Header from './Header'
+import Footer from './Footer'
 
 const Scrollbar = dynamic(() => import('~/shared').then(({ Scrollbar }) => Scrollbar), {
 	ssr: false,
@@ -70,7 +70,7 @@ const FrontLayout = ({
 	return (
 		<Lenis root options={{ ...scrollOptions }}>
 			<Head>
-				<title>{`${capitalize(title || page)} - Monie Verse`}</title>
+				<title>{`Monie Verse - ${capitalize(title || page)}`}</title>
 				<meta name='description' content={desc || pageDesc} />
 				<meta property='og:description' content={desc || pageDesc} />
 				<meta name='twitter:description' content={desc || pageDesc} />

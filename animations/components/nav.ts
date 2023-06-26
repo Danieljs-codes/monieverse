@@ -3,6 +3,7 @@ import { Component } from '../classes/component'
 
 export class Nav extends Component {
 	lastScrollTop: number
+	mm: gsap.MatchMedia
 	constructor() {
 		super({
 			element: 'body',
@@ -20,7 +21,11 @@ export class Nav extends Component {
 
 		this.lastScrollTop = 0
 
-		window.innerWidth < 769 && this.toggle()
+		this.mm = gsap.matchMedia()
+
+		this.mm.add('(max-width: 768px)', () => {
+			this.toggle()
+		})
 	}
 
 	onScroll() {
