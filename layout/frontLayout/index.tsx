@@ -12,6 +12,7 @@ import { capitalize, scrollOptions } from '~/utils'
 
 import Head from 'next/head'
 import Header from '../Header'
+import Footer from '../Footer'
 
 const Scrollbar = dynamic(() => import('~/shared').then(({ Scrollbar }) => Scrollbar), {
 	ssr: false,
@@ -78,6 +79,7 @@ const FrontLayout = ({
 				<Header />
 
 				<div data-page={page}>{children}</div>
+				<Footer />
 			</main>
 		</Lenis>
 	)
