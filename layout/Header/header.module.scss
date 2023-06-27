@@ -150,10 +150,12 @@
 				letter-spacing: -0.32px;
 				overflow: hidden;
 				a {
-					display: inline-block;
+					@extend %jcsb;
 				}
 				&:last-of-type {
 					color: var(--primary-400);
+					display: block;
+					width: calc(100% - max(3rem, 12px) * 2);
 				}
 			}
 		}
