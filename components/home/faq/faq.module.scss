@@ -1,10 +1,21 @@
 .faq {
-	margin-inline: var(--gutter);
+	padding-inline: var(--gutter);
 	padding-block: max(12rem, 50px);
+	position: relative;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: max(2rem, 20px);
-	border-top: 2px solid var(--primary-grey-100);
+	background: var(--primary-white);
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: var(--gutter);
+		right: var(--gutter);
+		height: 2px;
+		background: var(--primary-grey-100);
+	}
 
 	@include respondMax('tablet') {
 		grid-template-columns: 1fr;
