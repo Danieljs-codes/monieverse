@@ -7,13 +7,13 @@ export const Left = () => {
 	const balances = [
 		{
 			name: 'Nigerian Naira',
-			flag: '/nig.png',
+			flag: '/nig.svg',
 			bal: '₦20,899,990',
 			sub: '10',
 		},
 		{
 			name: 'Nigerian Naira',
-			flag: '/usa.png',
+			flag: '/usa.svg',
 			bal: '$32,899,990',
 			sub: '10',
 		},

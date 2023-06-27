@@ -59,6 +59,7 @@
 		padding: max(15px, 3.2rem);
 		border-radius: var(--radius-16);
 		padding-right: 0;
+		position: relative;
 
 		display: flex;
 		justify-content: space-between;
@@ -259,12 +260,6 @@
 			flex-direction: column;
 			justify-content: space-between;
 
-			aside {
-				position: absolute;
-				bottom: max(3.2rem, 24px);
-				left: max(3.2rem, 24px);
-			}
-
 			&::before {
 				content: '';
 				position: absolute;
@@ -390,9 +385,82 @@
 			}
 		}
 	}
+
+	&-right {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		gap: max(3.2rem, 24px);
+		overflow: hidden;
+
+		&-top {
+			border-radius: var(--radius-16);
+			background: var(--primary-grey-25, #f9f9fb);
+			position: relative;
+		}
+		&-bottom {
+			border-radius: var(--radius-16);
+			background: var(--primary-grey-25, #f9f9fb);
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				background: linear-gradient(90deg, #f9f9fb 0%, rgba(249, 249, 251, 0) 100%);
+				left: 0rem;
+				top: 20px;
+				width: max(3.8rem, 30px);
+				height: 151px;
+				z-index: 2;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				background: linear-gradient(90deg, #f9f9fb 0%, rgba(249, 249, 251, 0) 100%);
+				right: 0;
+				top: 80px;
+				width: max(4rem, 30px);
+				height: 151px;
+				transform: rotateY(180deg);
+			}
+
+			ul {
+				@extend %aic;
+				gap: max(1.6rem, 12px);
+				margin-block: max(40px, 6rem);
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				li {
+					@extend %center;
+					width: max(6.4rem, 60px);
+					aspect-ratio: 1/1;
+					border-radius: 100%;
+					background: var(--primary-grey-100);
+
+					&.active {
+						width: max(9.6rem, 80px);
+						background: var(--primary-white);
+						img {
+							width: max(4rem, 34px);
+						}
+					}
+					img {
+						width: max(2.8rem, 24px);
+						height: auto;
+						aspect-ratio: 1/1;
+					}
+				}
+			}
+		}
+	}
 }
 
 .as {
+	position: absolute;
+	bottom: max(3.2rem, 24px);
+	right: max(3.2rem, 24px);
+	left: max(3.2rem, 24px);
+
 	h1 {
 		@extend %text-18;
 		color: var(--primary-500);

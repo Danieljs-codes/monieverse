@@ -1,6 +1,7 @@
 import s from './expand.module.scss'
 import { Center } from './Center'
 import { Left } from './Left'
+import { Right } from './Right'
 
 const Expand = () => {
 	return (
@@ -38,6 +39,7 @@ const Expand = () => {
 			<div className={s['expand-main']}>
 				<Left />
 				<Center />
+				<Right />
 			</div>
 		</div>
 	)
