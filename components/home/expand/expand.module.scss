@@ -396,7 +396,65 @@
 			border-radius: var(--radius-16);
 			background: var(--primary-grey-25, #f9f9fb);
 			position: relative;
+			padding: max(15px, 3.2rem);
+			&-rt {
+				padding: max(1.6rem, 12px);
+				padding-right: 0;
+				position: relative;
+
+				border-radius: var(--radius-12);
+				border: 1px solid var(--primary-grey-100);
+				background: var(--primary-white);
+				display: flex;
+				flex-direction: column;
+				gap: max(5rem, 40px);
+
+				&::after {
+					content: '';
+					position: absolute;
+					background: linear-gradient(90deg, #f9f9fb 0%, rgba(249, 249, 251, 0) 100%);
+					right: 0;
+					top: 0px;
+					width: max(4rem, 30px);
+					height: 100%;
+					transform: rotateY(180deg);
+				}
+				& > div {
+					@extend %aic;
+					gap: max(1.6rem, 14px);
+				}
+
+				p,
+				span {
+					@extend %text-12;
+					color: var(--primary-grey-600);
+					font-weight: 500;
+					letter-spacing: -0.24px;
+					margin-bottom: max(4px, 0.4rem);
+
+					display: inline-block;
+					white-space: nowrap;
+					width: max(27rem, 250px);
+					overflow: hidden;
+					text-overflow: clip;
+				}
+				small {
+					color: var(--primary-grey-400);
+					font-size: max(1rem, 10px);
+					letter-spacing: -0.1px;
+				}
+
+				span {
+					color: var(--primary-grey-400);
+					margin-bottom: 0;
+				}
+				&-top {
+					svg {
+					}
+				}
+			}
 		}
+
 		&-bottom {
 			border-radius: var(--radius-16);
 			background: var(--primary-grey-25, #f9f9fb);

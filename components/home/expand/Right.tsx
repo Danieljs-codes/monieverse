@@ -11,7 +11,48 @@ export const Right = () => {
 	return (
 		<div className={s['expand-right']}>
 			<div className={s['expand-right-top']}>
-				<ul></ul>
+				<div className={s['expand-right-top-rt']}>
+					<div className={s['expand-right-top-rt-top']}>
+						<svg
+							width='20'
+							height='20'
+							viewBox='0 0 20 20'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'>
+							<rect width='20' height='20' rx='10' fill='#F5F6F8' />
+							<rect x='5' y='5' width='10' height='10' rx='5' fill='#E4E3EC' />
+						</svg>
+						<div>
+							<p>We sent out your USD</p>
+							<small>Wednesday, 24 Apr, 8:45 PM</small>
+						</div>
+					</div>
+					<div className={s['expand-right-top-rt-btm']}>
+						<svg
+							width='20'
+							height='20'
+							viewBox='0 0 20 20'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'>
+							<rect x='7' y='7' width='6' height='6' rx='3' fill='#EEEEF0' />
+							<rect
+								x='1'
+								y='1'
+								width='18'
+								height='18'
+								rx='9'
+								stroke='#EEEEF0'
+								strokeWidth='2'
+							/>
+						</svg>
+
+						<div>
+							{/* <span>Completed</span> */}
+							<p>Woohoo! &#127881; Your 150,220 USD transfer is complete</p>
+							<small>Wednesday, 24 Apr, 8:45 PM</small>
+						</div>
+					</div>
+				</div>
 				<Aside />
 			</div>
 
