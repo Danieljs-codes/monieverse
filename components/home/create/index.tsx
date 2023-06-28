@@ -116,7 +116,7 @@ const Create = () => {
 					key={generateKey(idx, sec.desc)}
 					className={s['create-section']}>
 					<div className={s['create-section-div']}>move money, seamlessly!</div>
-					<h1>{sec.title}</h1>
+					<h1 data-animation='paragraphs'>{sec.title}</h1>
 					<p data-animation='paragraphs'>{sec.desc}</p>
 					<div className={s['create-section-bg']}>
 						<Image src='/create/bg.png' width={1440} height={900} alt='' />

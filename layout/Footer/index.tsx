@@ -146,7 +146,7 @@ const Footer = () => {
 						</div>
 
 						<div className={s['footer-main-right-bottom']}>
-							<p data-animation='paragraphs'>
+							<p>
 								Monieverse Ltd. (Monieverse)is an essential tool for businesses operating
 								globally. It ensures that businesses remain compliant with local and
 								global tax laws and regulations, helping them avoid legal trouble and

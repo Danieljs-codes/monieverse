@@ -52,16 +52,13 @@ body {
 
 [data-animation='paragraphs'] {
 	overflow: hidden;
+	height: fit-content;
 
 	span {
 		overflow: hidden;
 		display: inline-block;
-		vertical-align: top;
-
-		span {
-			transform-style: preserve-3d;
-			will-change: transform;
-		}
+		transform-style: preserve-3d;
+		will-change: transform;
 	}
 }
 

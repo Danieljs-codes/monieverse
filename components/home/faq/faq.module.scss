@@ -27,6 +27,8 @@
 		font-weight: 500;
 		line-height: 1.25;
 		letter-spacing: 0.48px;
+		position: sticky;
+		top: 0;
 		em {
 			color: var(--primary-400);
 		}
