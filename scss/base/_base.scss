@@ -50,8 +50,7 @@ body {
 	color: var(--black);
 }
 
-[data-animation='paragraphs'],
-[data-animation='titles'] {
+[data-animation='paragraphs'] {
 	overflow: hidden;
 
 	span {

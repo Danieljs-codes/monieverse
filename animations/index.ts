@@ -5,7 +5,6 @@ import { Home } from './pages/home'
 import { Terms } from './pages/terms'
 
 import Paragraphs from './elements/Paragraphs'
-import Titles from './elements/Titles'
 
 import { Nav } from './components/nav'
 
@@ -24,7 +23,6 @@ export class App {
 	animations: any[]
 	animationsSpeed: any
 	animationsParagraphs: any
-	animationsTitles: any
 	nav: Nav
 
 	constructor({ page }: { page: string }) {
@@ -73,13 +71,6 @@ export class App {
 		this.animationsParagraphs = mapEach(
 			document.querySelectorAll('[data-animation="paragraphs"]'),
 			(element) => new Paragraphs({ element })
-		)
-		this.animations.push(...this.animationsParagraphs)
-
-		// Title.
-		this.animationsTitles = mapEach(
-			document.querySelectorAll('[data-animation="titles"]'),
-			(element) => new Titles({ element })
 		)
 		this.animations.push(...this.animationsParagraphs)
 	}
