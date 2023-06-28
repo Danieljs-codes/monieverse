@@ -77,6 +77,44 @@
 	&-bg {
 		@extend %cover;
 		z-index: -1;
+		pointer-events: none;
+
+		img {
+			@extend %img;
+		}
+
+		svg {
+			@extend %pulse;
+			position: absolute;
+			&:nth-of-type(1) {
+				left: max(40px, 8rem);
+				top: max(70px, 20rem);
+				--pulse: 1000ms;
+			}
+			&:nth-of-type(2) {
+				right: 58rem;
+				top: max(80px, 12rem);
+				--pulse: 1200ms;
+				@include respondMax('tablet') {
+					right: 30rem;
+				}
+			}
+			&:nth-of-type(3) {
+				right: max(30px, 12rem);
+				top: max(50px, 17rem);
+				--pulse: 1500ms;
+			}
+			&:nth-of-type(4) {
+				right: max(40px, 18rem);
+				top: 44%;
+				--pulse: 900ms;
+			}
+			&:nth-of-type(5) {
+				left: 35%;
+				top: 57%;
+				--pulse: 900ms;
+			}
+		}
 	}
 
 	&-cards {

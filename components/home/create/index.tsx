@@ -86,7 +86,7 @@ const Create = () => {
 							toggleActions: 'play none none reverse',
 						},
 						y: 0,
-						duration: 0.4,
+						duration: 0.5,
 						force3D: true,
 						immediateRender: false,
 					})
@@ -99,7 +99,7 @@ const Create = () => {
 							toggleActions: 'play none none reverse',
 						},
 						y: '100%',
-						duration: 0.4,
+						duration: 0.5,
 						force3D: true,
 						immediateRender: false,
 					})
