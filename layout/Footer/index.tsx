@@ -20,6 +20,58 @@ const Footer = () => {
 	return (
 		<Fragment>
 			<div className={s['footer-top']}>
+				<div className={s['footer-decor']}>
+					<svg
+						width='14'
+						height='15'
+						viewBox='0 0 14 15'
+						fill='none'
+						xmlns='http://www.w3.org/2000/svg'>
+						<path
+							opacity='0.32'
+							d='M4.97178 0.984066L8.13868 5.26014L13.4253 5.86472L9.14924 9.03161L8.54466 14.3183L5.37777 10.0422L0.0911296 9.4376L4.3672 6.2707L4.97178 0.984066Z'
+							fill='#D84E04'
+						/>
+					</svg>
+					<svg
+						width='10'
+						height='10'
+						viewBox='0 0 10 10'
+						fill='none'
+						xmlns='http://www.w3.org/2000/svg'>
+						<path
+							opacity='0.24'
+							d='M2.71207 0.661245L5.81621 3.12827L9.73799 2.54383L7.27096 5.64798L7.8554 9.56975L4.75126 7.10273L0.829478 7.68716L3.2965 4.58302L2.71207 0.661245Z'
+							fill='#D84E04'
+						/>
+					</svg>
+					<svg
+						width='9'
+						height='10'
+						viewBox='0 0 9 10'
+						fill='none'
+						xmlns='http://www.w3.org/2000/svg'>
+						<path
+							opacity='0.24'
+							d='M2.10536 0.950636L4.91736 3.18548L8.47005 2.65605L6.23521 5.46805L6.76464 9.02074L3.95264 6.78589L0.39995 7.31532L2.63479 4.50332L2.10536 0.950636Z'
+							fill='#5F4CC8'
+						/>
+					</svg>
+					<svg
+						width='17'
+						height='16'
+						viewBox='0 0 17 16'
+						fill='none'
+						xmlns='http://www.w3.org/2000/svg'>
+						<path
+							opacity='0.2'
+							d='M4.23173 0.100586L9.66348 4.41748L16.526 3.39481L12.2091 8.82656L13.2317 15.689L7.79998 11.3721L0.9375 12.3948L5.2544 6.96307L4.23173 0.100586Z'
+							fill='#47389E'
+						/>
+					</svg>
+				</div>
+				<Image alt='' width={513} height={363} src='/footer/left.svg' />
+				<Image alt='' width={512} height={363} src='/footer/right.svg' />
 				<h1 data-animation='paragraphs'>Get Started on Monieverse</h1>
 				<p data-animation='paragraphs'>
 					Monieverse is a legally registered company under the applicable laws and
