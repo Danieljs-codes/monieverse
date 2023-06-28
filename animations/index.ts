@@ -60,7 +60,7 @@ export class App {
 						start: 0,
 						end: 'max',
 						invalidateOnRefresh: true,
-						scrub: 1,
+						scrub: 1.5,
 					},
 				})
 			}

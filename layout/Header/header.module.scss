@@ -75,6 +75,7 @@
 	right: var(--gutter);
 	pointer-events: none;
 	display: none;
+	z-index: z('navigation');
 
 	@include respondMax('tablet') {
 		display: block;

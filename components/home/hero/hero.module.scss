@@ -1,12 +1,14 @@
 .hero {
 	@extend %container;
-	height: 100vh;
+	min-height: 100vh;
+	position: relative;
 
 	&-top {
 		@extend %center;
 		flex-direction: column;
-		padding-top: max(20rem, 130px);
-		padding-bottom: max(15rem, 100px);
+		// padding-top: max(20rem, 130px);
+		padding-top: clamp(130px, 30vh, 20rem);
+		padding-bottom: max(15rem, 50px);
 
 		h1 {
 			@extend %text-88;
@@ -58,6 +60,54 @@
 					border: 1px solid var(--primary-grey-100);
 					background: var(--primary-white);
 				}
+			}
+		}
+	}
+
+	&-gb {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		width: 100%;
+		height: auto;
+	}
+
+	&-bg {
+		@extend %cover;
+		z-index: -1;
+	}
+
+	&-cards {
+		@extend %jcsb;
+		gap: 10px;
+		padding-top: max(5rem, 5vh);
+		width: 100%;
+
+		@include respondMax('tablet') {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: max(5rem, 30px);
+		}
+		img {
+			position: relative;
+			z-index: 1;
+		}
+
+		& > img {
+			width: max(32rem, 220px);
+		}
+
+		div {
+			@extend %aic;
+			flex-direction: column;
+			@include respondMax('tablet') {
+				margin-left: auto;
+				// gap: max(30px, 5rem);
+			}
+			img {
+				width: max(36rem, 300px);
 			}
 		}
 	}
