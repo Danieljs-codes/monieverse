@@ -364,29 +364,34 @@
 
 			ul {
 				@extend %aic;
-				gap: max(1.6rem, 12px);
+
 				margin-block: max(40px, 6rem);
 				position: absolute;
-				left: 50%;
-				transform: translateX(-50%);
+				right: 0%;
+				gap: max(2rem, 14px);
+				// transform: translateX(-50%);
 				li {
 					@extend %center;
-					width: max(6.4rem, 60px);
-					aspect-ratio: 1/1;
-					border-radius: 100%;
-					background: var(--primary-grey-100);
-
-					&.active {
-						width: max(9.6rem, 80px);
-						background: var(--primary-white);
-						img {
-							width: max(4rem, 34px);
-						}
-					}
-					img {
-						width: max(2.8rem, 24px);
-						height: auto;
+					// &.active {
+					// 	div {
+					// 		background: var(--primary-white);
+					// 		transform: scale(1.4);
+					// 	}
+					// }
+					div {
+						@extend %center;
+						width: max(6.4rem, 60px);
 						aspect-ratio: 1/1;
+						border-radius: 100%;
+						background: var(--primary-grey-100);
+						transition: all 0.25s var(--ease-in-bounce);
+
+						img {
+							width: max(2.8rem, 24px);
+							height: auto;
+							aspect-ratio: 1/1;
+							transition: width 0.5s var(--ease-out-expo);
+						}
 					}
 				}
 			}

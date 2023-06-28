@@ -1,12 +1,43 @@
 import s from './expand.module.scss'
 import { Aside } from './Aside'
-import { useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import cn from '~/utils/cn'
+import gsap from 'gsap'
 
 export const Right = () => {
-	const countries = ['eu.svg', 'uk.svg', 'nig.svg', 'usa.svg', 'cn.svg']
-	// eslint-disable-next-line no-unused-vars
+	const countries = useMemo(
+		() => ['eu.svg', 'uk.svg', 'nig.svg', 'usa.svg', 'cn.svg'],
+		[]
+	)
+
 	const [active, setActive] = useState(2)
+	const ref = useRef<HTMLUListElement>(null)
+
+	useEffect(() => {
+		const wrap = gsap.utils.wrap(0, ref.current.clientWidth / 2)
+		const arr: HTMLLIElement[] = gsap.utils.toArray('[data-animation="countries"]')
+
+		gsap.to(arr, {
+			delay: 1,
+			duration: 1,
+			x: () => `-=${arr[0].clientWidth}`,
+			modifiers: {
+				x: gsap.utils.unitize(wrap),
+			},
+			repeat: -1,
+			repeatDelay: 1,
+			repeatRefresh: true,
+		})
+
+		const tl = setInterval(() => {
+			setActive((curr) => {
+				if (curr === countries.length - 1) return 0
+				return curr + 1
+			})
+		}, 2000)
+
+		return () => clearInterval(tl)
+	}, [countries])
 
 	return (
 		<div className={s['expand-right']}>
@@ -57,12 +88,19 @@ export const Right = () => {
 			</div>
 
 			<div className={s['expand-right-bottom']}>
-				<ul>
-					{countries.map((country, idx) => (
-						<li key={idx} className={cn(active === idx && s.active)}>
-							<img src={country} alt='' width={28} height={28} />
-						</li>
-					))}
+				<ul ref={ref}>
+					{new Array(2).fill(null).map(() =>
+						countries.map((country, idx) => (
+							<li
+								data-animation='countries'
+								key={idx}
+								className={cn(active === idx && s.active)}>
+								<div>
+									<img src={country} alt='' width={28} height={28} />
+								</div>
+							</li>
+						))
+					)}
 				</ul>
 				<Aside />
 			</div>
