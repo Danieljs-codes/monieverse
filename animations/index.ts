@@ -7,9 +7,11 @@ import { Terms } from './pages/terms'
 import Paragraphs from './elements/Paragraphs'
 import Titles from './elements/Titles'
 
+import { Nav } from './components/nav'
+
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import { Nav } from './components/nav'
+
 gsap.registerPlugin(ScrollTrigger)
 
 export class App {

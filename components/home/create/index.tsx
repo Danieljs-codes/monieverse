@@ -98,7 +98,7 @@ const Create = () => {
 							start: 'top 0%',
 							toggleActions: 'play none none reverse',
 						},
-						y: '100%',
+						y: '41rem',
 						duration: 0.5,
 						force3D: true,
 						immediateRender: false,

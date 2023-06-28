@@ -109,7 +109,7 @@ const Footer = () => {
 					regulations of the jurisdictions in which we operate.{' '}
 				</p>
 				<button>
-					<span data-animation='paragraphs'>Create a free account</span>
+					<span>Create a free account</span>
 				</button>
 			</div>
 

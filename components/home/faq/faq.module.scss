@@ -40,19 +40,26 @@
 			white-space: nowrap;
 			flex-wrap: wrap;
 			a {
-				@extend %center;
-				gap: max(5px, 0.8rem);
-
 				padding: max(10px, 1.4rem) max(16px, 2.4rem);
 				border-radius: var(--radius-12);
 				background: var(--primary-400);
 				width: fit-content;
 
-				@extend %text-16;
-				font-weight: 500;
-				color: var(--primary-white);
-				text-align: center;
-				letter-spacing: -0.032rem;
+				transition: background-color 0.35s var(--ease-out-quad);
+				&:hover {
+					background-color: var(--primary-500);
+				}
+
+				span {
+					@extend %center;
+					gap: max(5px, 0.8rem);
+
+					@extend %text-16;
+					font-weight: 500;
+					color: var(--primary-white);
+					text-align: center;
+					letter-spacing: -0.032rem;
+				}
 			}
 
 			p {

@@ -43,6 +43,7 @@
 				font-weight: 500;
 				line-height: 1.5;
 				letter-spacing: -0.32px;
+				transition: background-color 0.35s var(--ease-out-quad);
 
 				@include respondMax('mobile') {
 					width: 167px;
@@ -52,13 +53,18 @@
 				&:nth-of-type(1) {
 					background: var(--primary-400);
 					color: var(--primary-white);
+					&:hover {
+						background-color: var(--primary-500);
+					}
 				}
 				&:nth-of-type(2) {
-					background: var(--primary-400);
 					color: var(--primary-grey-600);
 					border-radius: 12px;
 					border: 1px solid var(--primary-grey-100);
 					background: var(--primary-white);
+					&:hover {
+						background-color: var(--primary-grey-100);
+					}
 				}
 			}
 		}

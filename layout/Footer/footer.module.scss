@@ -43,6 +43,12 @@
 			background: var(--primary-400);
 
 			border-radius: var(--radius-12);
+
+			transition: background-color 0.35s var(--ease-out-quad);
+			&:hover {
+				background-color: var(--primary-500);
+			}
+
 			span {
 				@extend %text-16;
 				color: var(--primary-white);
@@ -76,6 +82,7 @@
 
 	&-decor {
 		@extend %cover;
+		pointer-events: none;
 		svg {
 			@extend %pulse;
 			position: absolute;

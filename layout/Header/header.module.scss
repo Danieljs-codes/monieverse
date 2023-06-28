@@ -46,8 +46,9 @@
 		a {
 			@extend %center;
 			text-align: center;
-			padding: max(8px, 1.2rem) max(16px, 2.4rem);
+			padding: max(12px, 1.6rem) max(16px, 2.4rem);
 			border-radius: var(--radius-12);
+			transition: background-color 0.35s var(--ease-out-quad);
 			span {
 				@extend %text-16;
 				width: max(11.2rem, 50px);
@@ -58,11 +59,17 @@
 			&:nth-of-type(1) {
 				background: var(--primary-grey-50);
 				color: var(--primary-grey-600);
+				&:hover {
+					background-color: var(--primary-grey-100);
+				}
 			}
 
 			&:nth-of-type(2) {
 				background: var(--primary-400);
 				color: var(--primary-white);
+				&:hover {
+					background-color: var(--primary-500);
+				}
 			}
 		}
 	}

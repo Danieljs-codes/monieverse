@@ -87,8 +87,12 @@ const Hero = () => {
 					accounts, you can send and receive from China, UK, Nigeria and more at low-fees.
 				</p>
 				<div className={s['hero-top-btn']}>
-					<Link href='/'>Create a free account</Link>
-					<Link href='/'>Contact sales</Link>
+					<Link href='/'>
+						<span>Create a free account</span>
+					</Link>
+					<Link href='/'>
+						<span>Contact sales</span>
+					</Link>
 				</div>
 
 				<div className={s['hero-cards']}>

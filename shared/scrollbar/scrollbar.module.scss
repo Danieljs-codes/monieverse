@@ -23,6 +23,10 @@
 		border-radius: max(0.4rem, 4px);
 		border: max(0.5px, 0.1rem) solid var(--primary-400);
 		cursor: grab;
+		transition: background-color 0.35s var(--ease-out-quad);
+		&:hover {
+			background-color: var(--primary-500);
+		}
 	}
 
 	@include respondMax(mobile3x) {
