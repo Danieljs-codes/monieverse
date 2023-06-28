@@ -20,13 +20,13 @@ const Footer = () => {
 	return (
 		<Fragment>
 			<div className={s['footer-top']}>
-				<h1>Get Started on Monieverse</h1>
-				<p>
+				<h1 data-animation='paragraphs'>Get Started on Monieverse</h1>
+				<p data-animation='paragraphs'>
 					Monieverse is a legally registered company under the applicable laws and
 					regulations of the jurisdictions in which we operate.{' '}
 				</p>
 				<button>
-					<span>Create a free account</span>
+					<span data-animation='paragraphs'>Create a free account</span>
 				</button>
 			</div>
 
@@ -63,7 +63,7 @@ const Footer = () => {
 						</div>
 
 						<div className={s['footer-main-right-bottom']}>
-							<p>
+							<p data-animation='paragraphs'>
 								Monieverse Ltd. (Monieverse)is an essential tool for businesses operating
 								globally. It ensures that businesses remain compliant with local and
 								global tax laws and regulations, helping them avoid legal trouble and

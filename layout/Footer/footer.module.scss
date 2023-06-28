@@ -73,12 +73,6 @@
 				@extend %text-12;
 				color: var(--primary-grey-400);
 				line-height: 1.5;
-				display: flex;
-				gap: max(0.3rem, 2px);
-				svg {
-					@include ratio(1, 1);
-					width: max(1.7rem, 12px);
-				}
 			}
 
 			ul {
@@ -97,6 +91,14 @@
 
 			&-top {
 				@extend %jcsb;
+				p {
+					display: flex;
+					gap: max(0.3rem, 2px);
+					svg {
+						@include ratio(1, 1);
+						width: max(1.7rem, 12px);
+					}
+				}
 			}
 
 			&-bottom {

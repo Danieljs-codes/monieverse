@@ -16,7 +16,7 @@
 			border-radius: 90px;
 			border: 1px solid var(--secondary-orange-400);
 			padding: max(8px, 1rem) max(1.6rem, 14px);
-			margin-bottom: max(8px, 0.8rem);
+			margin-bottom: max(8px, 1rem);
 		}
 		h1 {
 			@extend %text-60;
@@ -28,7 +28,8 @@
 			display: inline;
 			vertical-align: bottom;
 
-			svg {
+			svg,
+			img {
 				aspect-ratio: 49/48;
 				width: max(4.9rem, 30px);
 				height: auto;
@@ -250,11 +251,15 @@
 		grid-template-rows: 1.6fr 1fr;
 		gap: max(3.2rem, 24px);
 		overflow: hidden;
+
 		&-top {
-			position: relative;
 			border-radius: var(--radius-16);
 			background: var(--primary-grey-25);
-			padding: max(15px, 3.2rem);
+			padding-block: max(15px, 3.2rem);
+			padding-inline: 0;
+
+			position: relative;
+			overflow: hidden;
 
 			display: flex;
 			flex-direction: column;
@@ -264,11 +269,11 @@
 				content: '';
 				position: absolute;
 				background: linear-gradient(90deg, #f9f9fb 0%, rgba(249, 249, 251, 0) 100%);
-				left: -4rem;
+				left: 0rem;
 				top: 80px;
-				width: max(7rem, 30px);
+				width: max(4rem, 30px);
 				height: 151px;
-				transform: rotateY(180deg);
+				// transform: rotateY(180deg);
 				z-index: 2;
 			}
 			&::after {
@@ -285,104 +290,12 @@
 
 		ul {
 			@extend %center;
-			gap: max(2rem, 15px);
 			margin-block: max(40px, 6rem);
-			position: absolute;
-			left: max(3.2rem, 24px);
-			transform: translateX(-50%);
+			left: 0;
 		}
 
 		&-li {
-			width: max(30rem, 250px);
-			padding: var(--radius-16);
-
-			border-radius: var(--radius-12);
-			border: 1px solid var(--primary-grey-100);
-			background: var(--primary-white);
-
-			header {
-				@extend %jcsb;
-				margin-bottom: max(2.5rem, 20px);
-				div {
-					@extend %aic;
-					gap: max(5px, 0.5rem);
-					color: var(--primary-grey-400);
-					font-size: max(1rem, 10px);
-					font-weight: 500;
-				}
-				p {
-					@extend %center;
-					font-size: max(9px, 0.9rem);
-					font-weight: 500;
-					letter-spacing: -0.09px;
-
-					border-radius: 90px;
-					padding: max(2px, 0.4rem) max(8px, 0.9rem);
-					gap: max(4px, 0.4rem);
-					span {
-						width: max(2px, 0.2rem);
-						display: inline-block;
-						height: 9px;
-					}
-					&.completed {
-						color: var(--secondary-green-500);
-						background: var(--secondary-green-100);
-						span {
-							background: var(--secondary-green-300);
-						}
-					}
-					&.sent {
-						color: var(--secondary-light-blue-500);
-						background: var(--secondary-light-blue-100);
-						span {
-							background: var(--secondary-light-blue-300);
-						}
-					}
-					&.in-progress {
-						color: var(--secondary-yellow-600);
-						background: var(--secondary-yellow-100);
-						span {
-							background: var(--secondary-yellow-400);
-						}
-					}
-				}
-			}
-
-			&-t {
-				@extend %jcsb;
-				margin-bottom: max(1.2rem, 10px);
-				p {
-					@extend %text-14;
-					color: var(--primary-grey-600);
-					font-weight: 500;
-					letter-spacing: -0.14px;
-				}
-
-				span {
-					@extend %text-16;
-					@extend %aic;
-					gap: max(3px, 0.3rem);
-					color: var(--primary-grey-600);
-					font-family: var(--clash);
-					font-weight: 500;
-					letter-spacing: 0.16px;
-					sub {
-						@extend %text-14;
-						color: var(--primary-grey-400);
-						font-weight: 500;
-						letter-spacing: -0.14px;
-					}
-				}
-			}
-			&-b {
-				@extend %jcsb;
-				p {
-					@extend %text-12;
-					color: var(--primary-grey-400);
-					font-weight: 500;
-					letter-spacing: -0.12px;
-				}
-			}
+			margin-right: max(2.5rem, 15px);
 		}
 	}
 
@@ -447,10 +360,6 @@
 				span {
 					color: var(--primary-grey-400);
 					margin-bottom: 0;
-				}
-				&-top {
-					svg {
-					}
 				}
 			}
 		}

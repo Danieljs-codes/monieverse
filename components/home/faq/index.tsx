@@ -6,7 +6,7 @@ import { Link } from '~/shared'
 const Faq = () => {
 	return (
 		<section className={s.faq}>
-			<h1>
+			<h1 data-animation='paragraphs'>
 				Frequently Asked <br /> Questions, <em>Answered</em>
 			</h1>
 
