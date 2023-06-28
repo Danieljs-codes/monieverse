@@ -1,0 +1,49 @@
+.create {
+	@extend %container;
+	padding-top: max(14rem, 50px);
+	background: var(--primary-white);
+	&-top {
+		@extend %center;
+		flex-direction: column;
+		text-align: center;
+		div {
+			@extend %text-12;
+			@extend %center;
+			color: var(--secondary-light-blue-400);
+			font-weight: 600;
+			letter-spacing: 0.96px;
+			text-transform: uppercase;
+			border-radius: 90px;
+			border: 1px solid var(--secondary-light-blue-400);
+			padding: max(8px, 1rem) max(1.6rem, 14px);
+			margin-bottom: max(8px, 1rem);
+		}
+
+		h1 {
+			@extend %text-60;
+			color: var(--primary-grey-600);
+			font-family: var(--clash);
+			font-weight: 500;
+			margin-bottom: max(1.6rem, 12px);
+
+			display: inline;
+			vertical-align: bottom;
+
+			svg,
+			img {
+				aspect-ratio: 34/40;
+				width: max(3.4rem, 20px);
+				height: auto;
+				margin-inline: max(1.2rem, 8px);
+			}
+		}
+		p {
+			@extend %text-18;
+			color: var(--primary-grey-400);
+			width: max(53.3rem, 500px);
+			@include respondMax('mobile3x') {
+				width: 100%;
+			}
+		}
+	}
+}

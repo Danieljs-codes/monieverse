@@ -1,23 +1,16 @@
 import { generateKey } from '~/utils'
 import s from './expand.module.scss'
-import { Image } from '~/shared'
+import { Image, Marquee } from '~/shared'
 import { Aside } from './Aside'
+import { useEffect, useMemo, useState } from 'react'
+import cn from '~/utils/cn'
 
 export const Left = () => {
-	const balances = [
-		{
-			name: 'Nigerian Naira',
-			flag: '/nig.svg',
-			bal: '₦20,899,990',
-			sub: '10',
-		},
-		{
-			name: 'Nigerian Naira',
-			flag: '/usa.svg',
-			bal: '$32,899,990',
-			sub: '10',
-		},
-	]
+	const [active, setActive] = useState(0)
+	const balances = useMemo(
+		() => ['/balance/1.svg', '/balance/2.svg', '/balance/1.svg', '/balance/2.svg'],
+		[]
+	)
 
 	const transactions = [
 		{
@@ -116,6 +109,17 @@ export const Left = () => {
 		},
 	]
 
+	useEffect(() => {
+		const tl = setInterval(() => {
+			setActive((curr) => {
+				if (curr === balances.length - 1) return 0
+				return curr + 1
+			})
+		}, 6000)
+
+		return () => clearInterval(tl)
+	}, [balances])
+
 	return (
 		<div className={s['expand-left']}>
 			<div>
@@ -155,37 +159,22 @@ export const Left = () => {
 					<header>
 						<p>Your Balances</p>
 
-						<svg
-							width='33'
-							height='6'
-							viewBox='0 0 33 6'
-							fill='none'
-							xmlns='http://www.w3.org/2000/svg'>
-							<rect width='6' height='6' rx='3' fill='#8872FD' />
-							<rect x='11' y='1' width='4' height='4' rx='2' fill='#E4E3EC' />
-							<rect x='20' y='1' width='4' height='4' rx='2' fill='#E4E3EC' />
-							<rect x='29' y='1' width='4' height='4' rx='2' fill='#E4E3EC' />
-						</svg>
+						<div>
+							{balances.map((_, idx) => (
+								<span key={idx} className={cn(active === idx && s.acs)} />
+							))}
+						</div>
 					</header>
 
-					<ul>
-						{balances.map((bal, idx) => (
-							<li key={generateKey(idx, bal.name)}>
-								<header>
-									<Image src={bal.flag} width={20} height={20} alt={bal.name} />
-									<p>{bal.name}</p>
-								</header>
-
-								<div>
-									<h1>Available Balance</h1>
-									<p>
-										{bal.bal}
-										<sub>.{bal.sub}</sub>
-									</p>
-								</div>
-							</li>
-						))}
-					</ul>
+					<Marquee duration={balances.length * 6}>
+						<ul>
+							{balances.map((bal, idx) => (
+								<li key={generateKey(idx, bal)}>
+									<Image src={bal} alt='' width={253} height={148} />
+								</li>
+							))}
+						</ul>
+					</Marquee>
 				</div>
 
 				<div className={s['expand-left-bottom']}>
