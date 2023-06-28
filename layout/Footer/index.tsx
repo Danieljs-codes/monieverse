@@ -1,7 +1,9 @@
+import gsap from 'gsap'
 import { Image, Link } from '~/shared'
 import s from './footer.module.scss'
-import { Fragment } from 'react'
-import { useMediaQuery } from '@studio-lumio/hooks'
+import { Fragment, useEffect, useRef } from 'react'
+import { useIntersectionObserver, useMediaQuery } from '@studio-lumio/hooks'
+import cn from '~/utils/cn'
 
 const Footer = () => {
 	const isMobile = useMediaQuery('(max-width: 768px)')
@@ -16,6 +18,29 @@ const Footer = () => {
 			name: 'Terms of Use',
 		},
 	]
+
+	const img1 = useRef<HTMLImageElement>(null)
+	const img2 = useRef<HTMLImageElement>(null)
+
+	const intersection = useIntersectionObserver(img1, { threshold: 0.5 })
+	useEffect(() => {
+		if (intersection?.isIntersecting) {
+			gsap.to([img1.current, img2.current], {
+				rotate: '0',
+				delay: 0.5,
+				duration: 1.35,
+				stagger: 0.1,
+				ease: 'elastic.out(1, 0.4)',
+			})
+		} else {
+			gsap.set(img1.current, {
+				rotate: '-20deg',
+			})
+			gsap.set(img2.current, {
+				rotate: '20deg',
+			})
+		}
+	}, [intersection])
 
 	return (
 		<Fragment>
@@ -70,8 +95,14 @@ const Footer = () => {
 						/>
 					</svg>
 				</div>
-				<Image alt='' width={513} height={363} src='/footer/left.svg' />
-				<Image alt='' width={512} height={363} src='/footer/right.svg' />
+
+				<div className={cn(s['footer-img'], s.one)} ref={img1}>
+					<Image alt='' width={513} height={363} src='/footer/left.svg' />
+				</div>
+				<div className={cn(s['footer-img'], s.two)} ref={img2}>
+					<Image alt='' width={512} height={363} src='/footer/right.svg' />
+				</div>
+
 				<h1 data-animation='paragraphs'>Get Started on Monieverse</h1>
 				<p data-animation='paragraphs'>
 					Monieverse is a legally registered company under the applicable laws and

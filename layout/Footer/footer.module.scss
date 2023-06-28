@@ -1,10 +1,11 @@
 .footer {
+	overflow: hidden;
 	&-top {
 		@extend %center;
 		flex-direction: column;
 		text-align: center;
 		padding-inline: var(--gutter);
-		padding-block: max(8rem, 50px);
+		padding-block: max(7.2rem, 50px);
 		position: relative;
 		background: linear-gradient(175deg, #f6f4ff 0%, #fff5f1 100%);
 
@@ -50,23 +51,26 @@
 				line-height: 1.5;
 			}
 		}
+	}
 
-		img {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			width: max(51.3rem, 300px);
-			z-index: 2;
+	&-img {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: max(51.3rem, 300px);
+		z-index: 2;
+		height: 100%;
 
-			@include respondMax('tablet') {
-				display: none;
-			}
-			&:nth-of-type(1) {
-				left: 0;
-			}
-			&:nth-of-type(2) {
-				right: 0;
-			}
+		@include respondMax('tablet') {
+			display: none;
+		}
+		&.one {
+			left: 0;
+			transform: rotate(-21deg);
+		}
+		&.two {
+			right: 0;
+			transform: rotate(21deg);
 		}
 	}
 
