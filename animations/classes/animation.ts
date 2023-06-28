@@ -16,7 +16,7 @@ export class Animation extends Component {
 
 		this.observerOptions = {
 			// rootMargin: "0px 0px -20% 0px",
-			threshold: 1,
+			threshold: 0.4,
 		}
 
 		this.createObserver()

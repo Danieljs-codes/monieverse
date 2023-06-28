@@ -21,7 +21,7 @@ export default class TItles extends Animation {
 		gsap.to(this.elements.span, {
 			y: 0,
 			ease: 'expo.inOut',
-			duration: 1.5,
+			duration: 1,
 		})
 	}
 

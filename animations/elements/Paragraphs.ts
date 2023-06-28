@@ -37,14 +37,6 @@ export default class Paragraphs extends Animation {
 		this.easing = 'cubic-bezier(0.19, 1, 0.22, 1)'
 
 		this.onResize()
-
-		if ('IntersectionObserver' in window) {
-			toArray(this.lines).forEach((line) => {
-				toArray(line).forEach((word) => {
-					word.style[this.transformPrefix] = 'translateY(110%)'
-				})
-			})
-		}
 	}
 
 	animateIn() {
@@ -52,7 +44,7 @@ export default class Paragraphs extends Animation {
 
 		toArray(this.lines).forEach((line, lineIndex: number) => {
 			toArray(line).forEach((word) => {
-				word.style.transition = `transform 1.35s ${lineIndex * 0.13}s ${this.easing}`
+				word.style.transition = `transform 1.35s ${lineIndex * 0.15}s ${this.easing}`
 				word.style[this.transformPrefix] = 'translateY(0)'
 			})
 		})
@@ -60,6 +52,13 @@ export default class Paragraphs extends Animation {
 
 	animateOut() {
 		super.animateOut()
+		if ('IntersectionObserver' in window) {
+			toArray(this.lines).forEach((line) => {
+				toArray(line).forEach((word) => {
+					word.style[this.transformPrefix] = 'translateY(110%)'
+				})
+			})
+		}
 	}
 
 	onResize() {

@@ -1,8 +1,16 @@
 .footer {
 	&-top {
+		@extend %center;
+		flex-direction: column;
+		text-align: center;
 		padding-inline: var(--gutter);
 		padding-block: max(8rem, 50px);
 		background: linear-gradient(175deg, #f6f4ff 0%, #fff5f1 100%);
+
+		@include respondMax('mobile2x') {
+			text-align: left;
+			align-items: flex-start;
+		}
 
 		h1 {
 			@extend %text-48;

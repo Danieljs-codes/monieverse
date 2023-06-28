@@ -5,10 +5,10 @@ import { Right } from './Right'
 
 const Expand = () => {
 	return (
-		<div className={s.expand}>
+		<div className={s.expand} data-animation='expand'>
 			<section className={s['expand-top']}>
 				<div>move money, seamlessly!</div>
-				<h1 data-animation='titles'>
+				<h1>
 					<span>
 						Expand Payment Horizons{' '}
 						<svg

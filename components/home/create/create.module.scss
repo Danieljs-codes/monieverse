@@ -1,12 +1,16 @@
 .create {
-	@extend %container;
-	padding-top: max(14rem, 50px);
-	background: var(--primary-white);
-	&-top {
-		@extend %center;
+	position: relative;
+	&-section {
+		@extend %aic;
+		@extend %container;
 		flex-direction: column;
 		text-align: center;
-		div {
+		height: 100vh;
+		position: relative;
+		padding-top: max(14rem, 15vh);
+		position: sticky;
+		top: 0;
+		&-div {
 			@extend %text-12;
 			@extend %center;
 			color: var(--secondary-light-blue-400);
@@ -31,12 +35,14 @@
 
 			svg,
 			img {
-				aspect-ratio: 34/40;
-				width: max(3.4rem, 20px);
+				aspect-ratio: 48/48;
+				width: max(4.8rem, 36px);
 				height: auto;
+				vertical-align: middle;
 				margin-inline: max(1.2rem, 8px);
 			}
 		}
+
 		p {
 			@extend %text-18;
 			color: var(--primary-grey-400);
@@ -44,6 +50,31 @@
 			@include respondMax('mobile3x') {
 				width: 100%;
 			}
+		}
+
+		&-bg {
+			@extend %cover;
+			z-index: -1;
+			img {
+				@extend %cover;
+			}
+		}
+	}
+
+	&-images {
+		@extend %container;
+		@extend %cover;
+		position: fixed;
+		z-index: 1;
+		pointer-events: none;
+
+		img {
+			position: absolute;
+			bottom: 0;
+			width: calc(100% - var(--gutter) * 2);
+			left: var(--gutter);
+			right: var(--gutter);
+			transform: translateY(100%);
 		}
 	}
 }
