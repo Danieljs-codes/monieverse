@@ -7,6 +7,7 @@ import { Terms } from './pages/terms'
 import Paragraphs from './elements/Paragraphs'
 
 import { Nav } from './components/nav'
+import { Global } from './components/global'
 
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -23,7 +24,9 @@ export class App {
 	animations: any[]
 	animationsSpeed: any
 	animationsParagraphs: any
+
 	nav: Nav
+	global: Global
 
 	constructor({ page }: { page: string }) {
 		AutoBind(this)
@@ -44,6 +47,7 @@ export class App {
 	createComponents(): void {
 		this.createAnimations()
 		this.nav = new Nav()
+		this.global = new Global()
 	}
 
 	createAnimations(): void {

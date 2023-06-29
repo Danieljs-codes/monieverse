@@ -13,12 +13,12 @@ export const isProtocol = (href: string) =>
 export const isExternal = (href: string) => href?.startsWith('http')
 
 export const scrollOptions = {
-	duration: 1.2,
+	duration: 1.3,
 	easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 	orientation: 'vertical',
 	gestureOrientation: 'vertical',
 	smoothWheel: true,
-	wheelMultiplier: 0.6,
+	wheelMultiplier: 0.5,
 	touchMultiplier: 1,
 	smoothTouch: false,
 	infinite: false,

@@ -1,14 +1,12 @@
 .global {
 	position: relative;
-	&-section {
+	&-top {
 		@extend %aic;
 		@extend %container;
 		flex-direction: column;
 		text-align: center;
 		position: relative;
-		padding-block: max(14rem, 15vh);
-		position: sticky;
-		top: 0;
+		padding-top: max(14rem, 15vh);
 		&-div {
 			@extend %text-12;
 			@extend %center;
@@ -41,14 +39,94 @@
 				margin-inline: max(1.2rem, 8px);
 			}
 		}
+	}
 
-		p {
-			@extend %text-18;
-			color: var(--primary-grey-400);
-			width: max(53.3rem, 500px);
-			@include respondMax('mobile3x') {
-				width: 100%;
+	&-content {
+		padding-inline: var(--gutter);
+		display: grid;
+		grid-template-columns: repeat(var(--layout-columns-count), minmax(0, 1fr));
+		grid-gap: var(--layout-columns-gap);
+		padding-block: max(15rem, 15vh);
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	&-ul {
+		grid-column: 1/4;
+		li {
+			border-radius: var(--radius-12);
+			background: var(--primary-white);
+			padding-inline: max(1.6rem, 12px);
+			margin-bottom: var(--radius-12);
+			&:last-of-type {
+				margin-bottom: 0;
 			}
+
+			header {
+				@extend %text-18;
+				font-weight: 500;
+				padding: max(2.25rem, 18px);
+			}
+			div {
+				padding-inline: max(1.6rem, 12px);
+				overflow: hidden;
+				svg {
+					width: 100%;
+					height: auto;
+					margin-block: max(2.4rem, 16px);
+				}
+				h1 {
+					color: var(--primary-grey-600);
+					font-size: max(3rem, 20px);
+					font-family: var(--clash);
+					font-weight: 500;
+					line-height: 1.4;
+					span {
+						background: linear-gradient(
+							90deg,
+							rgba(182, 170, 249, 1),
+							rgba(124, 212, 253, 1),
+							rgba(232, 228, 254, 1)
+						);
+						background-clip: text;
+						-webkit-text-fill-color: transparent;
+					}
+				}
+				p {
+					@extend %text-16;
+					color: var(--primary-grey-400);
+					font-weight: 400;
+					line-height: 1.5;
+					letter-spacing: -0.32px;
+					padding-bottom: max(3.2rem, 24px);
+				}
+			}
+
+			&:nth-of-type(1) {
+				color: var(--primary-400);
+			}
+			&:nth-of-type(2) {
+				color: var(--secondary-green-500);
+			}
+			&:nth-of-type(3) {
+				color: var(--secondary-orange-400);
+			}
+			&:nth-of-type(4) {
+				color: var(--secondary-light-blue-400);
+			}
+		}
+	}
+
+	&-media {
+		grid-column: 4/-1;
+		position: relative;
+		&-item {
+			@extend %cover;
+			border-radius: var(--radius-16);
+			overflow: hidden;
+		}
+		&-bg {
+			@extend %img;
 		}
 	}
 }

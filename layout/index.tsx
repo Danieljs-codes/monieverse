@@ -70,7 +70,7 @@ const FrontLayout = ({
 	return (
 		<Lenis root options={{ ...scrollOptions }}>
 			<Head>
-				<title>{`Monie Verse - ${capitalize(title || page)}`}</title>
+				<title>{`Monie Verse | ${capitalize(title || page)}`}</title>
 				<meta name='description' content={desc || pageDesc} />
 				<meta property='og:description' content={desc || pageDesc} />
 				<meta name='twitter:description' content={desc || pageDesc} />
