@@ -15,6 +15,13 @@ export default class Paragraphs extends Animation {
 			},
 		})
 
+		gsap.set(this.elements.inner, {
+			y: '105%',
+			rotate: '5deg',
+			duration: 0.75,
+			ease: 'expo.inOut',
+			autoAlpha: 0,
+		})
 		this.onResize()
 	}
 
@@ -22,6 +29,7 @@ export default class Paragraphs extends Animation {
 		super.animateIn()
 		gsap.to(this.elements.inner, {
 			y: '0',
+			rotate: '0',
 			duration: 1.5,
 			ease: 'expo.inOut',
 			autoAlpha: 1,
@@ -30,12 +38,6 @@ export default class Paragraphs extends Animation {
 
 	animateOut() {
 		super.animateOut()
-		gsap.to(this.elements.inner, {
-			y: '105%',
-			duration: 0.75,
-			ease: 'expo.inOut',
-			autoAlpha: 0,
-		})
 	}
 
 	onResize() {}

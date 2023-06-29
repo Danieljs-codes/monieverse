@@ -14,7 +14,7 @@ const Header = () => {
 			name: 'Features',
 		},
 		{
-			href: '/faq',
+			href: '#faq',
 			name: 'FAQs',
 		},
 	]

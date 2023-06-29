@@ -7,6 +7,11 @@ export const generateKey = (index: number, id: string) => {
 
 export const ObjectHasData = (obj: Object | null) => Object.values(obj || {}).length > 0
 
+export const isHash = (href: string) => href?.indexOf('#') != -1
+export const isProtocol = (href: string) =>
+	href?.startsWith('mailto:') || href?.startsWith('tel:')
+export const isExternal = (href: string) => href?.startsWith('http')
+
 export const scrollOptions = {
 	duration: 1.2,
 	easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
