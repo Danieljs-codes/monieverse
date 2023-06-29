@@ -75,8 +75,8 @@ const Global = () => {
 				<div className={s['global-content']} data-animation='global-content'>
 					<ul className={s['global-ul']}>
 						{list.map((item, idx) => (
-							<li data-animation='global-list' key={generateKey(idx, item.title)}>
-								<header>{item.title}</header>
+							<li key={generateKey(idx, item.title)}>
+								<header data-animation='global-header'>{item.title}</header>
 
 								<div data-animation='global-div'>
 									{item.sub}

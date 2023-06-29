@@ -10,7 +10,7 @@ export class Global extends Component {
 			elements: {
 				container: '[data-animation="global-container"]',
 				content: '[data-animation="global-container"]',
-				list: '[data-animation="global-list"]',
+				header: '[data-animation="global-header"]',
 				div: '[data-animation="global-div"]',
 			},
 		})
@@ -22,25 +22,28 @@ export class Global extends Component {
 	}
 
 	animateList() {
-		// eslint-disable-next-line no-unused-vars
-		const { container, content, list, div } = this.elements
+		const { container, header, div } = this.elements
 
 		gsap.set(div, {
 			height: (idx) => idx != 0 && 0,
 		})
+		gsap.set(header, {
+			color: (idx) => idx != 0 && '#49576D',
+		})
 
-		gsap
-			.timeline({
-				defaults: { ease: 'none' },
-				scrollTrigger: {
-					trigger: container,
-					invalidateOnRefresh: true,
-					markers: isLocal,
-					pin: true,
-					scrub: true,
-					end: () => '+=' + container.offsetWidth * 1.4,
-				},
-			})
+		const timeline = gsap.timeline({
+			defaults: { ease: 'none' },
+			scrollTrigger: {
+				trigger: container,
+				invalidateOnRefresh: true,
+				markers: isLocal,
+				pin: true,
+				scrub: true,
+				end: () => '+=' + container.offsetWidth * 1.4,
+			},
+		})
+
+		timeline
 			.to(
 				div[0],
 				{
@@ -58,6 +61,22 @@ export class Global extends Component {
 				'first'
 			)
 			.to(
+				header[0],
+				{
+					color: '#49576D',
+				},
+				'first'
+			)
+			.to(
+				header[1],
+				{
+					color: '#339969',
+				},
+				'first'
+			)
+
+		timeline
+			.to(
 				div[1],
 				{
 					height: 0,
@@ -72,6 +91,22 @@ export class Global extends Component {
 				'second'
 			)
 			.to(
+				header[1],
+				{
+					color: '#49576D',
+				},
+				'second'
+			)
+			.to(
+				header[2],
+				{
+					color: '#FF7D52',
+				},
+				'second'
+			)
+
+		timeline
+			.to(
 				div[2],
 				{
 					height: 0,
@@ -82,6 +117,20 @@ export class Global extends Component {
 				div[3],
 				{
 					height: 'auto',
+				},
+				'third'
+			)
+			.to(
+				header[2],
+				{
+					color: '#49576D',
+				},
+				'third'
+			)
+			.to(
+				header[3],
+				{
+					color: '#0BA5EC',
 				},
 				'third'
 			)
