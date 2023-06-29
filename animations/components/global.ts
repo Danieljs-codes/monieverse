@@ -12,6 +12,9 @@ export class Global extends Component {
 				content: '[data-animation="global-container"]',
 				header: '[data-animation="global-header"]',
 				div: '[data-animation="global-div"]',
+
+				path: '[data-animation="global-path"]',
+				pathEl: '[data-animation="global-path-el"]',
 			},
 		})
 
@@ -22,8 +25,13 @@ export class Global extends Component {
 	}
 
 	animateList() {
-		const { container, header, div } = this.elements
+		const { container, header, div, path, pathEl } = this.elements
 
+		const pth = path[0].getBoundingClientRect().width / 2 - 20
+
+		gsap.set(pathEl, {
+			x: `-${pth}`,
+		})
 		gsap.set(div, {
 			height: (idx) => idx != 0 && 0,
 		})
@@ -42,6 +50,19 @@ export class Global extends Component {
 				end: () => '+=' + container.offsetWidth * 1.4,
 			},
 		})
+
+		gsap
+			.timeline({
+				defaults: { ease: 'none' },
+				scrollTrigger: {
+					trigger: container,
+					invalidateOnRefresh: true,
+					scrub: true,
+				},
+			})
+			.to(pathEl[0], {
+				x: pth,
+			})
 
 		timeline
 			.to(
@@ -71,6 +92,13 @@ export class Global extends Component {
 				header[1],
 				{
 					color: '#339969',
+				},
+				'first'
+			)
+			.to(
+				pathEl[1],
+				{
+					x: pth,
 				},
 				'first'
 			)
@@ -104,6 +132,13 @@ export class Global extends Component {
 				},
 				'second'
 			)
+			.to(
+				pathEl[2],
+				{
+					x: pth,
+				},
+				'second'
+			)
 
 		timeline
 			.to(
@@ -131,6 +166,13 @@ export class Global extends Component {
 				header[3],
 				{
 					color: '#0BA5EC',
+				},
+				'third'
+			)
+			.to(
+				pathEl[3],
+				{
+					x: pth,
 				},
 				'third'
 			)
