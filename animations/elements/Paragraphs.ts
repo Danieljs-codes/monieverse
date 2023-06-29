@@ -18,7 +18,6 @@ export default class Paragraphs extends Animation {
 		gsap.set(this.elements.inner, {
 			y: '105%',
 			rotate: '5deg',
-			duration: 0.75,
 			ease: 'expo.inOut',
 			autoAlpha: 0,
 		})
@@ -30,7 +29,7 @@ export default class Paragraphs extends Animation {
 		gsap.to(this.elements.inner, {
 			y: '0',
 			rotate: '0',
-			duration: 1.5,
+			duration: 1.35,
 			ease: 'expo.inOut',
 			autoAlpha: 1,
 		})
