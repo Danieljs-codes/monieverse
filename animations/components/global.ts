@@ -38,7 +38,7 @@ export class Global extends Component {
 					markers: isLocal,
 					pin: true,
 					scrub: true,
-					end: () => '+=' + container.offsetWidth * 1.5,
+					end: () => '+=' + container.offsetWidth * 1.4,
 				},
 			})
 			.to(

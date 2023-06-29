@@ -128,6 +128,13 @@ const Global = () => {
 									height={554}
 									alt=''
 								/>
+								<div className={s['global-media-img']}>
+									<div>
+										<img src={item.img[0]} alt='' />
+										<img src={item.img[1]} alt='' />
+									</div>
+									<img src={item.img[2]} alt='' />
+								</div>
 							</div>
 						))}
 					</div>
