@@ -1,8 +1,7 @@
 import s from './expand.module.scss'
 import { Aside } from './Aside'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import cn from '~/utils/cn'
-import gsap from 'gsap'
 
 export const Right = () => {
 	const countries = useMemo(
@@ -11,24 +10,8 @@ export const Right = () => {
 	)
 
 	const [active, setActive] = useState(2)
-	const ref = useRef<HTMLUListElement>(null)
 
 	useEffect(() => {
-		const wrap = gsap.utils.wrap(0, ref.current.clientWidth / 2)
-		const arr: HTMLLIElement[] = gsap.utils.toArray('[data-animation="countries"]')
-
-		gsap.to(arr, {
-			delay: 1,
-			duration: 1,
-			x: () => `-=${arr[0].clientWidth}`,
-			modifiers: {
-				x: gsap.utils.unitize(wrap),
-			},
-			repeat: -1,
-			repeatDelay: 1,
-			repeatRefresh: true,
-		})
-
 		const tl = setInterval(() => {
 			setActive((curr) => {
 				if (curr === countries.length - 1) return 0
@@ -88,11 +71,11 @@ export const Right = () => {
 			</div>
 
 			<div className={s['expand-right-bottom']}>
-				<ul ref={ref}>
+				<ul data-animation='expand-countries'>
 					{new Array(2).fill(null).map(() =>
 						countries.map((country, idx) => (
 							<li
-								data-animation='countries'
+								data-animation='expand-countries-item'
 								key={idx}
 								className={cn(active === idx && s.active)}>
 								<div>

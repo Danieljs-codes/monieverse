@@ -53,8 +53,6 @@
 		overflow: hidden;
 		@include respondMax('tablet2x') {
 			display: block;
-			// padding-top: max(10rem, 50px);
-			// margin-bottom: max(10rem, 50px);
 			overflow: visible;
 		}
 	}
@@ -145,6 +143,7 @@
 	&-media {
 		grid-column: 4/-1;
 		position: relative;
+		overflow: hidden;
 		@include respondMax('tablet2x') {
 			display: none;
 		}
@@ -153,9 +152,7 @@
 			@extend %cover;
 			border-radius: var(--radius-16);
 			overflow: hidden;
-			transform: translateY(100%);
 			&:nth-of-type(1) {
-				transform: translateY(0%);
 				.global-media-img {
 					display: flex;
 					align-items: center;

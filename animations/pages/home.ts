@@ -9,6 +9,7 @@ export class Home extends Page {
 		super({
 			element: '[data-page="home"]',
 			elements: {
+				/**Global */
 				global: '[data-animation="global"]',
 				globalContainer: '[data-animation="global-container"]',
 				globalHeader: '[data-animation="global-header"]',
@@ -18,10 +19,57 @@ export class Home extends Page {
 				globalPathEl: '[data-animation="global-path-el"]',
 				globalPathNum: '[data-animation="global-path-num"]',
 				globalMediaItem: '[data-animation="global-media-item"]',
+
+				/**Create */
+				create: '[data-animation="create"]',
+				createSection: '[data-animation="create-section"]',
+				createImage: '[data-animation="create-image"]',
+
+				/**Expand */
+				expandCountries: '[data-animation="expand-countries"]',
+				expandCountriesItem: '[data-animation="expand-countries-item"]',
 			},
 		})
 
 		this.mm = gsap.matchMedia()
+	}
+
+	animateCreate() {
+		const { createSection, createImage } = this.elements
+		const arr: HTMLDivElement[] = toArray(createSection)
+		const images: HTMLDivElement[] = toArray(createImage)
+
+		arr.forEach((el, index) => {
+			images.filter((img, idx) => {
+				if (idx === index) {
+					gsap.to(img, {
+						scrollTrigger: {
+							id: 'first',
+							trigger: el,
+							start: 'top 80%',
+							toggleActions: 'play none none reverse',
+						},
+						y: 0,
+						duration: 0.4,
+						force3D: true,
+						immediateRender: false,
+					})
+
+					gsap.to(img, {
+						scrollTrigger: {
+							trigger: el,
+							id: 'two',
+							start: 'top -20%',
+							toggleActions: 'play none none reverse',
+						},
+						y: '41rem',
+						duration: 0.4,
+						force3D: true,
+						immediateRender: false,
+					})
+				}
+			})
+		})
 	}
 
 	animateGlobal() {
@@ -50,6 +98,10 @@ export class Home extends Page {
 			.set(globalHeader, {
 				color: (idx) => idx != 0 && '#49576D',
 			})
+			.set(globalMediaItem, {
+				x: (idx) => idx != 0 && '-100%',
+				// scale: (idx) => idx != 0 && '0.75',
+			})
 
 		const timeline = gsap.timeline({
 			defaults: { ease: 'none' },
@@ -59,7 +111,7 @@ export class Home extends Page {
 				markers: isLocal,
 				pin: true,
 				scrub: true,
-				end: () => '+=' + globalContainer.offsetWidth * 1.4,
+				end: () => '+=' + globalContainer.offsetWidth * 2,
 			},
 		})
 
@@ -118,10 +170,30 @@ export class Home extends Page {
 				.to(
 					globalMediaItem[idx + 1],
 					{
-						y: 0,
+						x: 0,
+						scale: 1,
 					},
 					`this-${idx}`
 				)
+		})
+	}
+
+	animateExpand() {
+		const { expandCountries, expandCountriesItem } = this.elements
+		const wrap = gsap.utils.wrap(0, expandCountries.clientWidth / 2)
+		const countries: HTMLLIElement[] = toArray(expandCountriesItem)
+
+		/**Right */
+		gsap.to(countries, {
+			delay: 1,
+			duration: 1,
+			x: () => `-=${countries[0].clientWidth}`,
+			modifiers: {
+				x: gsap.utils.unitize(wrap),
+			},
+			repeat: -1,
+			repeatDelay: 1,
+			repeatRefresh: true,
 		})
 	}
 
@@ -135,6 +207,8 @@ export class Home extends Page {
 
 	show(): void {
 		super.show()
+		this.animateCreate()
+		this.animateExpand()
 		this.mm.add('(min-width: 992px)', () => {
 			this.animateGlobal()
 		})

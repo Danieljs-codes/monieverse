@@ -5,7 +5,6 @@ import { useEffectOnce } from '@studio-lumio/hooks'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import CustomEase from 'gsap/dist/CustomEase'
 
 import { useLenis, Lenis } from '@studio-freight/react-lenis'
 import { capitalize, scrollOptions } from '~/utils'
@@ -25,11 +24,10 @@ const RealViewport = dynamic(
 )
 
 if (typeof window !== 'undefined') {
-	gsap.registerPlugin(ScrollTrigger, CustomEase)
+	gsap.registerPlugin(ScrollTrigger)
 	// ScrollTrigger.normalizeScroll()
 
 	ScrollTrigger.defaults({
-		// markers: process.env.NODE_ENV === 'development',
 		onToggle: (scrollTrigger) => {
 			scrollTrigger.refresh()
 		},
@@ -55,7 +53,9 @@ const FrontLayout = ({
 	title?: string
 }) => {
 	const lenis = useLenis(() => ScrollTrigger.update())
-	useEffect(() => ScrollTrigger.refresh(), [lenis])
+	useEffect(() => {
+		ScrollTrigger.refresh()
+	}, [lenis])
 
 	useEffectOnce(() => {
 		const init = async () => {

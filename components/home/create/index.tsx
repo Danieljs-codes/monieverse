@@ -1,6 +1,3 @@
-import { useEffect } from 'react'
-import gsap from 'gsap'
-
 import { generateKey } from '~/utils'
 import { Image } from '~/shared'
 
@@ -70,43 +67,6 @@ const Create = () => {
 			desc: 'Set up an account either as an agent or business and complete your profile to enable you send and receive money.',
 		},
 	]
-
-	useEffect(() => {
-		const arr: HTMLDivElement[] = gsap.utils.toArray('[data-animation="create-section"]')
-		const images: HTMLDivElement[] = gsap.utils.toArray('[data-animation="create-image"]')
-
-		arr.forEach((el, index) => {
-			images.filter((img, idx) => {
-				if (idx === index) {
-					gsap.to(img, {
-						scrollTrigger: {
-							id: 'first',
-							trigger: el,
-							start: 'top 80%',
-							toggleActions: 'play none none reverse',
-						},
-						y: 0,
-						duration: 0.5,
-						force3D: true,
-						immediateRender: false,
-					})
-
-					gsap.to(img, {
-						scrollTrigger: {
-							trigger: el,
-							id: 'two',
-							start: 'top 0%',
-							toggleActions: 'play none none reverse',
-						},
-						y: '41rem',
-						duration: 0.5,
-						force3D: true,
-						immediateRender: false,
-					})
-				}
-			})
-		})
-	}, [])
 
 	return (
 		<div className={s.create} data-animation='create'>
