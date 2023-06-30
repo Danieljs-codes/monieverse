@@ -16,29 +16,35 @@ export class Global extends Component {
 
 				path: '[data-animation="global-path"]',
 				pathEl: '[data-animation="global-path-el"]',
+				pathNum: '[data-animation="global-path-num"]',
+				mediaItem: '[data-animation="global-media-item"]',
 			},
 		})
 
 		this.mm = gsap.matchMedia()
 
-		this.mm.add('(max-width: 768px)', () => {})
-		this.animateList()
+		this.mm.add('(min-width: 992px)', () => {
+			this.animateList()
+		})
 	}
 
 	animateList() {
-		const { container, header, div, path, pathEl } = this.elements
+		const { container, header, div, path, pathEl, pathNum, mediaItem } = this.elements
 
-		const pth = path[0].getBoundingClientRect().width / 2 - 20
+		const pth =
+			path[0].getBoundingClientRect().width / 2 - pathNum[0].getBoundingClientRect().width
 
-		gsap.set(pathEl, {
-			x: `-${pth}`,
-		})
-		gsap.set(div, {
-			height: (idx) => idx != 0 && 0,
-		})
-		gsap.set(header, {
-			color: (idx) => idx != 0 && '#49576D',
-		})
+		gsap
+			.timeline()
+			.set(pathEl, {
+				x: `-${pth}`,
+			})
+			.set(div, {
+				height: (idx) => idx != 0 && 0,
+			})
+			.set(header, {
+				color: (idx) => idx != 0 && '#49576D',
+			})
 
 		const timeline = gsap.timeline({
 			defaults: { ease: 'none' },
@@ -65,7 +71,7 @@ export class Global extends Component {
 				x: pth,
 			})
 
-		toArray(div).forEach((element, idx) => {
+		toArray(div).forEach((_, idx) => {
 			if (idx > div.length - 1) return null
 			if (idx == div.length - 1) return null
 			timeline
@@ -104,81 +110,21 @@ export class Global extends Component {
 					},
 					`this-${idx}`
 				)
+				// .to(
+				// 	mediaItem[idx],
+				// 	{
+				// 		y: '-100%',
+				// 	},
+				// 	`this-${idx}`
+				// )
+				.to(
+					mediaItem[idx + 1],
+					{
+						y: 0,
+					},
+					`this-${idx}`
+				)
 		})
-
-		// timeline
-		// 	.to(
-		// 		div[1],
-		// 		{
-		// 			height: 0,
-		// 		},
-		// 		'second'
-		// 	)
-		// 	.to(
-		// 		div[2],
-		// 		{
-		// 			height: 'auto',
-		// 		},
-		// 		'second'
-		// 	)
-		// 	.to(
-		// 		header[1],
-		// 		{
-		// 			color: '#49576D',
-		// 		},
-		// 		'second'
-		// 	)
-		// 	.to(
-		// 		header[2],
-		// 		{
-		// 			color: '#FF7D52',
-		// 		},
-		// 		'second'
-		// 	)
-		// 	.to(
-		// 		pathEl[2],
-		// 		{
-		// 			x: pth,
-		// 		},
-		// 		'second'
-		// 	)
-
-		// timeline
-		// 	.to(
-		// 		div[2],
-		// 		{
-		// 			height: 0,
-		// 		},
-		// 		'third'
-		// 	)
-		// 	.to(
-		// 		div[3],
-		// 		{
-		// 			height: 'auto',
-		// 		},
-		// 		'third'
-		// 	)
-		// 	.to(
-		// 		header[2],
-		// 		{
-		// 			color: '#49576D',
-		// 		},
-		// 		'third'
-		// 	)
-		// 	.to(
-		// 		header[3],
-		// 		{
-		// 			color: '#0BA5EC',
-		// 		},
-		// 		'third'
-		// 	)
-		// 	.to(
-		// 		pathEl[3],
-		// 		{
-		// 			x: pth,
-		// 		},
-		// 		'third'
-		// 	)
 	}
 
 	create() {

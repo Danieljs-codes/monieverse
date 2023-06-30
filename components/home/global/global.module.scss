@@ -33,7 +33,7 @@
 			svg,
 			img {
 				aspect-ratio: 48/48;
-				width: max(4.8rem, 36px);
+				width: max(4.8rem, 28px);
 				height: auto;
 				vertical-align: middle;
 				margin-inline: max(1.2rem, 8px);
@@ -46,20 +46,22 @@
 		display: grid;
 		grid-template-columns: repeat(8, minmax(0, 1fr));
 		gap: max(16px, 3rem);
-		padding-block: max(17rem, 15vh);
+		margin-block: max(17rem, 15vh);
 		overflow: hidden;
+		@include respondMax('tablet2x') {
+			display: block;
+			margin-block: max(10rem, 50px);
+			overflow: visible;
+		}
 	}
 
 	&-ul {
 		grid-column: 1/4;
-
-		li {
-			border-radius: var(--radius-12);
-			background: var(--primary-white);
-			padding-inline: max(1.6rem, 12px);
-			margin-bottom: var(--radius-12);
-			&:last-of-type {
-				margin-bottom: 0;
+		& > div {
+			@include respondMax('tablet2x') {
+				position: sticky;
+				top: calc(max(3rem, 30px) + var(--header));
+				background: var(--primary-grey-25);
 			}
 
 			&:nth-of-type(1) {
@@ -82,14 +84,25 @@
 					--h-color: var(--secondary-light-blue-400);
 				}
 			}
+		}
+
+		&-li {
+			border-radius: var(--radius-12);
+			background: var(--primary-white);
+			padding-inline: max(1.6rem, 12px);
+			margin-bottom: var(--radius-12);
+			&:last-of-type {
+				margin-bottom: 0;
+			}
 
 			header {
 				@extend %text-18;
 				font-weight: 500;
-				padding: max(1.6rem, 14px);
+				padding: max(1.6rem, 16px);
 			}
+
 			div {
-				padding-inline: max(1.6rem, 12px);
+				padding-inline: max(1.6rem, 14px);
 				overflow: hidden;
 				svg {
 					width: 100%;
@@ -128,19 +141,52 @@
 	&-media {
 		grid-column: 4/-1;
 		position: relative;
+		@include respondMax('tablet2x') {
+			display: none;
+		}
 
 		&-item {
 			@extend %cover;
 			border-radius: var(--radius-16);
 			overflow: hidden;
+			transform: translateY(100%);
 			&:nth-of-type(1) {
-				.global-media-bg {
-					opacity: 1;
+				transform: translateY(0%);
+				.global-media-img {
+					display: flex;
+					align-items: center;
+					justify-content: flex-end;
+					padding-right: 0;
 				}
 			}
 
-			.global-media-bg {
-				opacity: 0;
+			&:nth-of-type(2) {
+				.global-media-img {
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+					padding-left: 0;
+					padding-bottom: 0;
+				}
+			}
+
+			&:nth-of-type(3) {
+				.global-media-img {
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+					padding-right: 0;
+				}
+			}
+
+			&:nth-of-type(4) {
+				.global-media-img {
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+					padding-left: 0;
+					padding-bottom: 0;
+				}
 			}
 		}
 
@@ -151,26 +197,71 @@
 		&-img {
 			@extend %cover;
 			z-index: 1;
-			padding: max(6.5rem, 20px);
-			padding-right: 0;
-
-			display: grid;
-			gap: max(2rem, 14px);
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-
-			// img {
-			// 	width: 100%;
-			// 	height: 100%;
-			// }
-
-			div {
-				display: grid;
-				gap: max(2rem, 14px);
-				grid-template-rows: repeat(2, minmax(0, 1fr));
-				// display: flex;
-				// flex-direction: column;
-				// justify-content: space-between;
+			padding: max(4.5rem, 20px);
+			img {
+				height: 100%;
+				width: 100%;
 			}
 		}
+	}
+}
+
+.global-mb {
+	position: relative;
+	border-radius: var(--radius-12);
+	overflow: hidden;
+	display: none;
+	@include respondMax('tablet2x') {
+		display: block;
+		margin-top: max(2rem, 15px);
+		margin-bottom: max(5rem, 50px);
+	}
+
+	&:nth-of-type(1) {
+		opacity: 1;
+		.global-media-img {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			padding-right: 0;
+		}
+	}
+
+	&:nth-of-type(2) {
+		.global-media-img {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			padding-left: 0;
+			padding-bottom: 0;
+		}
+	}
+
+	&:nth-of-type(3) {
+		.global-media-img {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			padding-right: 0;
+		}
+	}
+
+	&:nth-of-type(4) {
+		.global-media-img {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			padding-left: 0;
+			padding-bottom: 0;
+		}
+	}
+
+	& > img {
+		@extend %cover;
+	}
+
+	div {
+		position: relative;
+		z-index: 1;
 	}
 }
