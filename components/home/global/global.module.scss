@@ -41,16 +41,20 @@
 		}
 	}
 
+	&-container {
+		padding-block: max(17rem, 15vh);
+	}
+
 	&-content {
 		padding-inline: var(--gutter);
 		display: grid;
 		grid-template-columns: repeat(8, minmax(0, 1fr));
 		gap: max(16px, 3rem);
-		margin-block: max(17rem, 15vh);
 		overflow: hidden;
 		@include respondMax('tablet2x') {
 			display: block;
-			margin-block: max(10rem, 50px);
+			// padding-top: max(10rem, 50px);
+			// margin-bottom: max(10rem, 50px);
 			overflow: visible;
 		}
 	}

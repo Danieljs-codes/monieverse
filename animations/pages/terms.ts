@@ -3,7 +3,7 @@ import { Page } from '../classes/page'
 export class Terms extends Page {
 	constructor() {
 		super({
-			element: '[data-animation="terms"]',
+			element: '[data-page="terms"]',
 			elements: {},
 		})
 	}
