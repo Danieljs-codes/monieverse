@@ -71,10 +71,12 @@ export class Nav extends Component {
 				opacity: 0,
 				scale: 0.95,
 				pointerEvents: 'none',
+				willChange: 'opacity',
 			})
 			.set(navItem, {
 				opacity: 0,
 				y: '100%',
+				willChange: 'opacity, transform',
 			})
 			.set(navToggleOne, {
 				attr: {
@@ -84,6 +86,7 @@ export class Nav extends Component {
 			.set(navToggleTwo, {
 				scaleX: 1,
 				transformOrigin: '100% 100%',
+				willChange: 'transform',
 			})
 			.set(navToggleThree, {
 				attr: {

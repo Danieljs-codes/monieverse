@@ -91,15 +91,19 @@ export class Home extends Page {
 			.timeline()
 			.set(globalPathEl, {
 				x: `-${pth}`,
+				willChange: 'transform',
 			})
 			.set(globalDiv, {
 				height: (idx) => idx != 0 && 0,
+				willChange: 'height',
 			})
 			.set(globalHeader, {
 				color: (idx) => idx != 0 && '#49576D',
+				willChange: 'color',
 			})
 			.set(globalMediaItem, {
 				x: (idx) => idx != 0 && '-100%',
+				willChange: 'transform',
 				// scale: (idx) => idx != 0 && '0.75',
 			})
 

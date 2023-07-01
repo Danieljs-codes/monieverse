@@ -35,9 +35,11 @@ const Footer = () => {
 		} else {
 			gsap.set(img1.current, {
 				rotate: '-20deg',
+				willChange: 'transform',
 			})
 			gsap.set(img2.current, {
 				rotate: '20deg',
+				willChange: 'transform',
 			})
 		}
 	}, [intersection])

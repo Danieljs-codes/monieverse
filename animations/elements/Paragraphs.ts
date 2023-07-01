@@ -20,6 +20,7 @@ export default class Paragraphs extends Animation {
 			rotate: '5deg',
 			ease: 'expo.inOut',
 			autoAlpha: 0,
+			willChange: 'opacity, transform',
 		})
 		this.onResize()
 	}
